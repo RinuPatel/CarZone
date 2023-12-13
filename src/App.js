@@ -28,7 +28,7 @@ function App() {
         <Route path="/" element={<Dashbord />} />
         <Route path="/cars-list" element={<CarsList />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/car-details" element={<CarDetails />} />
+        <Route path="/car-details" element={<CarDetails />}  />
         <Route path="/car-booking-status" element={<CarBoking />} />
         <Route path="/booking-confiem" element={<BookingConfiem/>}/>
         <Route path="/cantact-us" element={<ContactUs/>}/>
