@@ -113,7 +113,7 @@ const Header = () => {
                     </button>
 
 
-                    <div className="collapse navbar-collapse " id='navbarNav'>
+                    <div className="collapse navbar-collapse" id='navbarNav'>
                         <div className="mx-auto" ></div>
                         <ul className='navbar-nav ms-auto'  >
                             <li className={isLinkActive('/') ? 'active' : ''} >

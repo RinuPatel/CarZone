@@ -1,0 +1,124 @@
+.about-screen{
+    margin-top: 4rem;
+    position:absolute;
+    background-color: rgb(243, 234, 234);
+
+}
+.about-us h3{
+    text-align: center;
+    text-transform: uppercase;
+    /* margin:4rem */
+}
+.about-us{
+    margin: 2rem;
+    margin-left: 5rem;
+}
+.first-car{
+    display: inline-flex;
+    margin: 1rem;
+    margin-top: 1rem;
+}
+.img img{
+    border-radius: 0.1rem;
+    box-shadow: 5px 5px 15px 0px gray;
+    width: 35rem;
+}
+.first-car-lines{
+    margin-top: 0.25rem;
+    padding: 1.3rem;
+    width: 40rem;
+    margin-left: 1rem;
+    height: 19rem;
+}
+.first-car-lines h4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+.second-car-screen{
+    display: inline-flex;
+    margin: 1.2rem;
+}
+.car-lines{
+    padding: 1.3rem;
+    width: 35rem;
+    margin-left: 3.5rem;
+    height: 20rem;
+}
+.cars-img img{
+    margin-top: -4rem;
+    width: 35rem;
+    height: 20rem;
+    border-radius: 0.1rem;
+    margin-left: 1.5rem;
+    box-shadow: 5px 5px 15px 0px gray;
+}
+
+@media only screen and (max-width:800px){
+   
+    .first-car{
+        display: block;
+        margin: 0rem;
+        margin-top: 1rem;
+    }
+    .about-us{
+        margin-left: 0.5rem;
+    }
+    .img img{
+        width: 20rem;
+        margin-left: 0.8rem;
+    }
+    .first-car-lines{
+        margin-top: 1rem;
+        width: 20rem;
+        font-size: small;
+    }
+    .first-car-lines h4{
+        font-size: 20px;
+    }
+    .second-car-screen{
+        display: block;
+        margin: 1.2rem;
+    }
+    .car-lines{
+        width: 20rem;
+        margin-left: 0.5rem;
+        height: 20rem;
+        font-size: small;
+    }
+  
+ 
+
+}
+
+@media only screen and (max-width:1000px){
+ .about-screen{
+    margin-left: 0rem;
+ }
+    .about-us{
+        margin-left: 1rem;
+    }
+    .img img{
+        width: 25rem;
+        height: 20rem;
+    }
+    .first-car-lines{
+        margin-top: 0rem;
+        width: 25rem;
+        font-size: small;
+        height: 20rem;
+    }
+    .car-lines{
+        width: 20rem;
+        margin-left: 0.5rem;
+        height: 20rem;
+        font-size: small;
+    }
+    .cars-img img{
+        width: 25rem;
+        height: 20rem;
+        margin-top: 0rem;
+        margin-left: 1.5rem;
+      
+    }
+
+}

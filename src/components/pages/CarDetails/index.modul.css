@@ -1,0 +1,383 @@
+.blackgroun {
+    background-color: rgb(236, 231, 231);
+    /* height: 100vh; */
+}
+
+.car-del-main {
+    margin-top: 15rem;
+    margin: 2rem;
+}
+
+.image-display {
+    border-radius: 0.5rem;
+    width: 35rem;
+    height: 25rem;
+}
+
+.image-side {
+    width: 20rem;
+    height: 12rem;
+}
+
+.image-frame {
+    display: inline-flex;
+    margin-top: 2rem;
+
+}
+
+.car-imag-mul {
+    display: inline-flex;
+    /* width: 20rem; */
+    flex-wrap: wrap;
+
+}
+
+.car-del {
+    margin: 2rem;
+}
+
+.hour-contant {
+    border: 2px solid white;
+    width: 5rem;
+    height: 4rem;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border-radius: 1rem;
+    background-color: transparent;
+    color: white;
+}
+
+.hour-contant:hover {
+    background-color: rgb(98, 223, 98);
+    color: black;
+}
+
+.green-btn {
+    background-color: rgb(98, 223, 98);
+    color: black;
+}
+
+.input-side {
+    margin-top: 2rem;
+    margin-left: 9rem;
+    display: inline-flex;
+}
+
+.input-lable {
+    background-color: #f33f3f;
+    height: 2.2rem;
+    padding: 0.3rem;
+    border-radius: 2px;
+    width: 5rem;
+    color: white;
+    font-weight: bolder;
+    /* margin-left: 0.2rem; */
+    font-size: small;
+}
+
+.booking-side {
+    
+    margin: 2rem;
+    margin-left: 3rem;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 1px 1px 1px gray;
+    /* height: 40%; */
+    /* border-left: 2px solid rgb(94, 89, 89); */
+}
+
+.my-pack {
+    margin: 1rem;
+    margin-left: 9rem;
+    display: flex;
+}
+
+.input-lable-pack {
+    background-color: #f33f3f;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 1px;
+    width: 5rem;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    font-size: small;
+}
+
+.dropdown1 {
+    padding: 0.1rem;
+    width: 15.6rem;
+    /* display: none; */
+    background-color: white;
+}
+.dropdown option{
+    background-color: #f33f3f;
+}
+
+.date {
+    margin: 0.3rem;
+    padding: 0.3rem;
+   
+}
+
+
+input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 20rem;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-position: right center;
+
+
+}
+
+date-input:focus {
+    outline: none;
+    border-color: #0084FF;
+    box-shadow: 0 0 0 2px rgba(0, 132, 255, 0.2);
+}
+
+.data-side {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    display: flex;
+}
+
+.input-side-date {
+    margin-left: 9rem;
+    display: flex;
+    margin-top: 0.5rem;
+    width: 65%;
+    height: 2.3rem;
+}
+
+.input-lable-data {
+    background-color: rgb(47, 26, 243);
+    padding: 0.4rem;
+    width: 5rem;
+    font-weight: bolder;
+    margin-left: 2.3rem;
+    
+}
+
+.input-days {
+    margin-left: 2.5rem;
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+}
+
+.btn-booking {
+    margin-top: 1rem;
+    margin-left: 7.5rem;
+
+}
+.my-input{
+    width: 18rem;
+}
+
+.btn-btn-book {
+    padding: 0.5rem;
+    width: 21rem;
+    background-color: rgb(104, 97, 97);
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.btn-btn-book:hover {
+    background-color: rgb(9, 10, 9);
+    color: rgb(238, 229, 229);
+    font-weight: bolder;
+}
+
+.car-frame {
+    /* border: 1px solid rgb(100, 94, 94); */
+    padding: 0rem;
+    border-radius: 0.3rem;
+}
+
+.car-frame-line1 {
+    display: flex;
+}
+
+.line1 {
+    margin-left: 3.5rem;
+}
+
+.car-name {
+    text-align: center;
+}
+
+.line2 {
+    margin-left: 3.5rem;
+}
+
+.img-posted {
+    width: 50px;
+    margin-left: 1.2rem;
+    border-radius: 2rem;
+}
+
+.container-div {
+    display: flex;
+}
+
+.form-side {
+    display: inline-flex;
+    margin-left: 2rem;
+}
+
+.date-input {
+    width: 16rem;
+}
+
+.amount-screen {
+    background-color: #f33f3f;
+    padding: 0.2rem;
+    width: 30%;
+    height: 22%;
+    color: white;
+    text-align: center;
+    margin-left: 30%;
+    border-radius: 5px;
+    box-shadow: 1px 5px 5px gray;
+}
+.amount-screen p h1{
+    color: white;
+}
+
+.book-title {
+    margin-left: 27%;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.car-details {
+    margin-left: -1.9rem;
+    background-color: white;
+    padding: 0.9rem;
+    width: 40rem;
+    height: 30rem;
+    border-radius: 0.2rem;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+
+.posted-by {
+    display: flex;
+    margin-top: 0rem;
+    margin-left: 15rem;
+}
+
+
+
+@media (max-width:800px) {
+    .image-frame {
+        display: block;
+        margin-top: 2rem;
+    }
+
+    .image-display {
+        width: 18rem;
+        height: 15rem;
+        margin-left: 2rem;
+    }
+
+    #mul-car {
+        display: none;
+    }
+
+    .container-div {
+        display: block;
+        margin: 0;
+    }
+
+    .car-frame {
+        border: 1px solid rgb(100, 94, 94);
+        /* padding: 0.2rem; */
+        /* margin-right: -0rem; */
+        width: 70%;
+        border-radius: 0.3rem;
+    }
+    .car-details{
+        width: 35rem;
+        margin-bottom: 2rem;
+    }
+    .car-frame{
+        margin-left: 4rem;
+        width: 80%;
+        border: none;
+    }
+    .posted-by {
+        display: flex;
+        margin-top: 0rem;
+        margin-left: 2rem;
+    }
+   
+
+    .line1 {
+        margin-left: 0rem;
+        margin: 0.5rem;
+    }
+
+    /* .car-del-main {
+        margin-top: 15rem;
+        margin: 0rem;
+    } */
+
+    .line2 {
+        margin-left: 0rem;
+        margin: 0.5rem;
+    }
+
+    
+    .txt {
+        font-weight: lighter;
+    }
+
+    /* #form-side {
+        display: block;
+        margin-left: 0;
+    } */
+
+    /* .hour-contant {
+        border: 2px solid white;
+        width: 3.5rem;
+        font-size: 10px;
+        height: 4rem;
+     
+        border-radius: 1rem;
+        background-color: transparent;
+        color: white;
+    }
+
+    #cst {
+        display: block;
+    }
+
+    .date-input {
+        width: 4rem;
+    }
+    .booking-side{
+        margin-top: 15rem;
+     } */
+
+}
+@media (min-width:456px) and (max-width:1080px){
+ .image-display{
+    width: 30rem;
+ }
+ .booking-side{
+    margin-top: 15rem;
+ }
+
+}
+
+.load-gif {
+    margin-top: 20%;
+    margin-left: 50%;
+}

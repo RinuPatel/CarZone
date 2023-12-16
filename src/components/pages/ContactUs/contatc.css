@@ -1,0 +1,53 @@
+.contant-main{
+    /* background-color: rgb(243, 234, 234); */
+    margin-top: 8%;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+label {
+    color: #333;
+}
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px;
+    }
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+
+}
+
+.card{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.btn-submit{
+    width: 33rem;
+    padding: 0.5rem;
+    background-color: #ff5050;
+    color: white;
+    text-transform: uppercase;
+}
+.btn-submit:hover{
+    background-color: rgb(22, 22, 22);
+}
+@media screen and (max-width: 800px) {
+    
+    .btn-submit{
+        width: 20rem;
+    }
+  }
+  @media screen and (max-width:500px) {
+    .btn-submit{
+        width: 10rem;
+    }
+  
+  }

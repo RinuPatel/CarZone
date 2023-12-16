@@ -1,0 +1,104 @@
+.background-image {
+    background-color:  rgb(243, 234, 234);
+}
+
+.my-list {
+    margin-top: 5rem;
+    margin-left: 4rem;
+}
+.black-text{
+    color: black;
+}
+
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-title {
+    margin: 1rem;
+    display: inline-flex;
+    border-bottom: 1px solid gray;
+}
+
+.categary-name {
+    margin: 1rem;
+}
+
+.categary-type {
+    padding: 0.3rem;
+    text-transform: capitalize;
+    background-color: #f33f3f;
+    border: 2px solid #f33f3f;
+    width: 8rem;
+    /* border-radius: 0.4rem; */
+    color: #ffffff;
+    box-shadow: 1px 1px 1px  #f33f3f;
+}
+.bg-black{
+    background-color: black;
+    color: white;
+}
+/* .categary-type:hover {
+    background-color: rgb(22, 18, 18);
+    color: white;
+} */
+.categary-type :active {
+    background-color: rgb(22, 18, 18);
+    color: white;
+}
+.car-fram {
+    width: 22rem;
+    background-color: white;
+    color: black;
+    margin: 0rem;
+    box-shadow: 2px 2px 5px gray;
+}
+.car-fram p{
+    text-align: center;
+    margin: 0.3rem;
+}
+.car-fram img{
+  padding: 0.5rem;
+  height: 50%;
+}
+.btn-rent{
+    background-color: black;
+    border: 2px solid black;
+    padding: 0.3rem;
+    margin: 1rem;
+    margin-bottom: 3rem;
+    margin-left: 3.5rem;
+    width: 15rem;
+    border-radius: 0.4rem;
+    font-weight: bolder;
+    color: white;
+    box-shadow: 5px 1px 15px 0px gray;
+}
+.btn-rent:hover{
+    background-color: black;
+    color: white;
+
+}
+
+@media  (max-width:800px) {
+    .my-list {
+        margin-left: 0rem;
+       
+    }
+
+    .car-fram {
+        width: 20rem;
+        margin: 0.3rem;
+    }
+
+    #btn-cat {
+        display: block;
+    }
+    .categary-type{
+        margin: 0.3rem;
+    }
+    #title-h3{
+        text-align: center;
+    }
+}

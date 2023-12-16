@@ -1,14 +1,11 @@
 # Dependency directories
 node_modules/
 
-# Compiled output
-build/
-dist/
-*.css
-*.map
+
+
 
 # Environment variables
-.env
+
 
 # IDE files
 .vscode/
