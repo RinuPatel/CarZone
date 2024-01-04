@@ -11,24 +11,31 @@ const CarDetails = () => {
     const [myCarDetails, setMyCarDetails] = useState({})
     const [isError, setIsError] = useState(false)
     const [from, setFrom] = useState("")
-    const [date, setDate] = useState("")
-    const [packages, setPackages] = useState("")
+    const [pickupDate, setPickupDate] = useState("")
+    const [dropupDate, setDropupDate] = useState("")
+    const [pickupTime, setPickupTime] = useState("")
+    const [dropupTime, setDropupTime] = useState("")
     const pRef = useRef(null);
     const DOMAIN = AppConfig.SUB_DOMAIN
     const BASE_URL = AppConfig.BASE_URL
     const [errorFrom, setErrorFrom] = useState("");
-    const [errorDate, setErrorDate] = useState("");
-    const [errorPackage, setErrorPackage] = useState("");
+    const [errorPickup, setErrorPickup] = useState("");
+    const [errorDropDate, setErrorDropDate] = useState("");
     const [times, setTimes] = useState("")
     const todays = new Date().toJSON().slice(0, 10);
-    console.log("today date", times);
+    const [currentImage, setCurrentImage] = useState('');
+
+    function sliderGallery(smallImg) {
+        setCurrentImage(smallImg);
+    }
+    // console.log("today date", times);
     // setToday(todays);
 
     let isAllData = true;
     var url_string = window.location;// it is get current page url
     var url = new URL(url_string);
     var myCarKey = url.searchParams.get("item_key");
-    console.log("my car key", myCarKey)
+    // console.log("my car key", myCarKey)
     const handlerDisplayOneCarDetails = async () => {
         if (myCarKey) {
             const data = await FetchApi("/display-carlist?item_id=" + myCarKey, "", {
@@ -41,10 +48,10 @@ const CarDetails = () => {
 
 
     }
-    console.log("my image here == > ", myCarDetails.registerYear);
+    // console.log("my image here == > ", myCarDetails.registerYear);
     const dateString = myCarDetails.registerYear
     const makeYear = myCarDetails.makeYear
-    const carRating = myCarDetails.schedule?myCarDetails.schedule:"";
+    const carRating = myCarDetails.schedule ? myCarDetails.schedule : "";
 
     const formatDate = new Date(dateString).toLocaleDateString('en-US', {
         year: 'numeric',
@@ -63,77 +70,75 @@ const CarDetails = () => {
             setErrorFrom("")
         }
     }
-    const inputData = (e) => {
+    const inputPickupDate = (e) => {
         const value = e.target.value;
-        setDate(value)
+        setPickupDate(value)
         if (value) {
-            setErrorDate("")
+            setErrorPickup("")
         }
     }
-    const inputtime = (e) => {
+    const inputDropupDate = (e) => {
         const value = e.target.value;
-        setTimes(value)
-        if(value){
-            setErrorDate("")
-        }
-    }
-    const inputPackage = (e) => {
-        const value = e.target.value;
-        setPackages(value)
+        setDropupDate(value)
         if (value) {
-            setErrorPackage("")
+            setErrorDropDate("")
         }
     }
+    // const inputtime = (e) => {
+    //     const value = e.target.value;
+    //     setTimes(value)
+    //     if (value) {
+    //         setErrorDate("")
+    //     }
+    // }
+
     const handlarCarBooking = async () => {
         try {
             if (from) {
                 setErrorFrom("")
             } else {
-                setErrorFrom("Error: Please enter your location")
+                setErrorFrom("Error:  Enter location")
                 isAllData = false;
             }
-            if (date) {
-                setErrorDate("")
+            // if (date) {
+            //     setErrorDate("")
+            // } else {
+            //     setErrorDate("Error: Pickaup date & Time")
+            //     isAllData = false;
+            // }
+            if (pickupDate) {
+                setErrorPickup("")
             } else {
-                setErrorDate("Error: Please select pickaup date")
+                setErrorPickup("Error: Enter Pickup Date & Time");
                 isAllData = false;
             }
-            if (packages) {
-                setErrorPackage("")
+            if (dropupDate) {
+                setErrorDropDate("")
             } else {
-                setErrorPackage("Error: Please enter your package");
+                setErrorDropDate("Error: Enter Dropup Date & Time")
                 isAllData = false;
             }
-            if(times){
-                setErrorDate("")
-            }else{
-                setErrorDate("Error: Please select pickaup time")
-                isAllData = false;
-            }
-            if (isAllData === true) {
-                if (pRef.current && carRating) {
-                    const paragraph = pRef.current.textContent;
-                    const rentPerCar = parseInt(paragraph.match(/\d+$/)[0], 10);
-                    console.log("my car price", rentPerCar)
-                    const hourse = packages.substring(packages, 2)
-                    // const totalCarRent = hourse * paragraph
-                    const carValue = parseInt(carRating.match(/\d+$/)[0], 10);
-                    const totalCarPrice = carValue * hourse
-                    console.log("my hour and price", hourse, carValue)
-                    console.log("my total price", totalCarPrice)
-
+            if (isAllData === true && carRating) {
+                if (pRef.current) {
+                    const Date1 = new Date(pickupDate)
+                    const date2 = new Date(dropupDate)
+                    const differenceInMilliseconds = Math.abs(Date1 - date2);
+                    const differenceInDays = Math.floor(differenceInMilliseconds / (24 * 60 * 60 * 1000));
+                    const totalPtice = carRating * differenceInDays;
+                    console.log("day diff==>", totalPtice);
                     const carBookingDetails = {
                         from: from,
-                        date: date,
-                        package: packages,
-                        price: rentPerCar,
+                        pickupDate: pickupDate,
+                        DropDate: dropupDate,
                         carName: myCarDetails.carName,
-                        totalPrice: totalCarPrice,
+                        price: carRating,
+                        totalPrice: totalPtice,
                         vehicalNo: myCarDetails.vehicalNo,
-                        phone: myCarDetails.phone,
                         bookId: myCarKey,
-                        time: times   
+                        pickupTime: pickupTime,
+                        dropTime: dropupTime
                     }
+                    console.log("object data =>", carBookingDetails);
                     if (carBookingDetails) {
 
                         const carBookingStr = JSON.stringify(carBookingDetails)
@@ -171,6 +176,7 @@ const CarDetails = () => {
         )
     }
 
+
     return (
         <>
             <div className="d-flex blackgroun">
@@ -178,158 +184,200 @@ const CarDetails = () => {
                 <div className='car-del-main'>
 
                     {myCarDetails && myCarDetails.image && myCarDetails.city ? (
-                        <div>
+                        <div className='carframe'>
                             <div className='image-frame' style={{ marginTop: "5rem" }}>
                                 <div className='mx-2'>
-                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[0]} alt="" className='image-display' />
+                                    <img src={currentImage || BASE_URL + /carImage/ + myCarDetails.image[0]} alt="" className='image-display' />
                                 </div>
-                                <div className='car-imag-mul mx-1' style={{ overflow: 'auto', maxHeight: '400px', borderRadius: '0.5rem' }} id="mul-car">
-                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[1]} alt="" className='image-side mx-1 my-1' />
-                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[0]} alt="" className='image-side mx-1 my-1' />
-                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[2]} alt="" className='image-side  mx-1 my-1' />
-                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[3]} alt="" className='image-side mx-1 my-1' />
-                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[4]} alt="" className='image-side mx-1 my-1' />
-                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[5]} alt="" className='image-side mx-1 my-1' />
+                                <div className='car-imag-mul mx-1' id="mul-car">
+                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[1]} alt="" className='image-side mx-1 my-1' onClick={(e) => sliderGallery(BASE_URL + /carImage/ + myCarDetails.image[1])} />
+                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[0]} alt="" className='image-side mx-1 my-1' onClick={(e) => sliderGallery(BASE_URL + /carImage/ + myCarDetails.image[0])} />
+                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[2]} alt="" className='image-side  mx-1 my-1' onClick={(e) => sliderGallery(BASE_URL + /carImage/ + myCarDetails.image[2])} />
+                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[3]} alt="" className='image-side mx-1 my-1' onClick={(e) => sliderGallery(BASE_URL + /carImage/ + myCarDetails.image[3])} />
+                                    <img src={BASE_URL + /carImage/ + myCarDetails.image[4]} alt="" className='image-side mx-1 my-1' onClick={(e) => sliderGallery(BASE_URL + /carImage/ + myCarDetails.image[4])} />
+                                    {/* <img src={BASE_URL + /carImage/ + myCarDetails.image[5]} alt="" className='image-side mx-1 my-1' /> */}
+                                </div>
+                            </div>
+
+
+
+                            <div className='car-del'>
+
+                                <div className='bn-CarDetaileBody'>
+                                    <p> {myCarDetails.carName}</p>
+                                    <h4 className='bn-specification'>Specifications</h4>
+                                    <div className='car-data'>
+                                        <span className='item1'>Seat</span>
+                                        <span className='vehicle-item' style={{ marginLeft: "7rem" }}>{myCarDetails.seats}</span>
+                                    </div>
+                                    <div className='car-data'>
+                                        <span className='item1'>Vehicle</span>
+                                        <span className='vehicle-item ' style={{ marginLeft: "5rem" }}>{myCarDetails.vehicalNo}</span>
+                                    </div>
+                                    <div className='car-data'>
+                                        <span className='item1'>Make year</span>
+                                        <span className='vehicle-item' style={{ marginLeft: "4rem" }}>{makeDate}</span>
+                                    </div>
+                                    <div className='car-data'>
+                                        <span className='item1'>Registration year</span>
+                                        <span className='vehicle-item'>{formatDate}</span>
+                                    </div>
+                                    <div className='car-data'>
+                                        <span className='item1'>Trasmission</span>
+                                        <span className='vehicle-item' style={{ marginLeft: "3.6rem" }}>{myCarDetails.trasmission}</span>
+                                    </div>
+                                    <div className='car-data'>
+                                        <span className='item1'>City</span>
+                                        <span className='vehicle-item' style={{ marginLeft: "7rem" }}>{myCarDetails.city}</span>
+                                    </div>
+                                    <div className='car-data'>
+                                        <span className='item1'>Posted By</span>
+                                        <span className='vehicle-item' style={{ marginLeft: "4rem" }}>{myCarDetails.admidName}</span>
+                                    </div>
+
                                 </div>
                             </div>
 
-                            <div className='car-del '>
-
-                                <div className='container-div' id='ove-del'>
-                                    <div className='car-details'>
-
-                                        <h2 className='car-name' style={{ fontFamily: "Times New Roman" }}> {myCarDetails.carName} </h2>
 
 
-                                        <div className='car-frame'>
-                                            <table></table>
-                                            <hr />
-                                            <div className='car-frame-line1'>
-                                                <div className='line1'>
-                                                    <h5>Make year</h5>
-                                                    <p className="txt">{makeDate}</p>
-                                                </div>
-                                                <div className='line1'>
-                                                    <h5>Registration year</h5>
-                                                    <p className="txt">{formatDate}</p>
-
-                                                </div>
-                                                <div className='line1'>
-                                                    <h5>Fuel type</h5>
-                                                    <p className="txt">{myCarDetails.fuelType}</p>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <div className='car-frame-line1'>
-                                                <div className='line2'>
-                                                    <h5>Km driven</h5>
-                                                    <p >31K Km</p>
-                                                </div>
-                                                <div className='line2'>
-                                                    <h5>Trasmission</h5>
-                                                    <p className="txt">{myCarDetails.trasmission}</p>
-                                                </div>
-                                                <div className='line2'>
-                                                    <h5>City</h5>
-                                                    <p className="txt">{myCarDetails.city}</p>
-
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <div style={{ marginLeft: "2.8rem" }}>
-
-                                                <h5 >Vehicle No</h5>
-                                                <p>{myCarDetails.vehicalNo}</p>
-                                            </div>
-                                            <div className='posted-by'>
-                                                <h4 className=''>Posted By : {myCarDetails.admidName}</h4>
-                                                <img src="/image/avatar.png" alt="" className='img-posted' />
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div className='booking-side' style={{ marginTop: "-0.1rem", marginLeft: "-2rem", width: "35rem", borderRadius: "0.2rem", height: "30rem", marginLeft: "2rem" }}>
-                                        <h4 className='book-title'>Book This car</h4>
-                                        <div className='amount-screen'>
-                                            <p>Per Hourse</p>
-                                            <h1 ref={pRef}>{carRating.substring(carRating.length - 4)}</h1>
-                                        </div>
-
-
-                                        <div style={{ marginLeft: "-4rem" }}>
-                                            <div>
-                                                {/* <Datepicker/> */}
-                                            </div>
-                                            <div className='input-side'>
-
-                                                <span className="input-lable" >FROM</span>
-                                                <input
-                                                    type="text"
-                                                    className="my-input col-8"
-                                                    placeholder='Your pickup location'
-                                                    onChange={inputFrom}
-                                                />
-                                            </div>
-                                            <div style={{ height: "0.8rem", color: "red", marginLeft: "9rem" }}>
-                                                {errorFrom}
-
-                                            </div>
-                                            <div className='input-side-date'>
-
-                                                <span className="input-lable" >DATE/TIME</span>
-                                                <input
-                                                    type="date"
-                                                    style={{ width: "8rem" }}
-                                                    className="my-input"
-                                                    placeholder='Your pickup location'
-                                                    onChange={inputData}
-                                                    // value={todays}
-                                                    min={todays}
-                                                />
-
-                                                <div class="cs-form">
-
-                                                    <input
-                                                     type="time" 
-                                                     class="form-control"
-                                                      value={times} 
-                                                      onChange={inputtime}
-                                                      style={{width:"8rem"}}
-                                                      />
-                                                </div>
-
-                                            </div>
-
-                                            <div style={{ height: "0.3rem", color: "red", marginLeft: "9rem" }}>
-                                                {errorDate}
-                                            </div>
-                                            <div className='my-pack' id='myDropdown' >
-                                                <span className="input-lable-pack" >PACKAGES</span>
-                                                <select name="" id="dropdown" className='dropdown1' onChange={inputPackage} >
-                                                    <option value="">Select Packages</option>
-                                                    <option value="1 hrs 10 km">1 hrs 10 km </option>
-                                                    <option value="2 hrs 20 km">2 hrs 30 km</option>
-                                                    <option value="3 hrs 40 km">3 hrs 40 km</option>
-                                                    <option value="5 hrs 60 km">5 hrs 60 km</option>
-                                                    <option value="7 hrs 80 km">7 hrs 80 km</option>
-                                                    <option value="9 hrs 100 km">9 hrs 100 km</option>
-                                                    <option value="10 hrs 110 km">10 hrs 110 km</option>
-                                                </select>
-                                            </div>
-                                            <div style={{ height: "0rem", color: "red", marginLeft: "9rem", marginTop: "-1rem" }}>
-                                                {errorPackage}
-                                            </div>
-
-                                            <div className='btn-booking'>
-                                                <CustomButton onClick={handlarCarBooking}> Continue</CustomButton>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
+                            <div className='booking-side mx-2' >
+                                <h4 className='book-title'>Book This car</h4>
+                                <div className='amount-screen'>
+                                    <p>Per Day</p>
+                                    <h2 ref={pRef}>{carRating.substring(carRating.length - 5)}₹</h2>
                                 </div>
+
+                                <div>
+                                    <span className="" >Pickup Location</span>
+                                    <input
+                                        type="text"
+                                        className="my-input"
+                                        placeholder='Your pickup location'
+                                        onChange={inputFrom}
+                                    />
+                                    <div style={{ height: "0.8rem", color: "red", fontSize: "small" }}>
+                                        {errorFrom}
+
+                                    </div>
+                                    <div>
+
+                                        <span className="" >Pick Up Date & Time</span>
+                                        <div style={{ display: "flex" }}>
+
+                                            <input
+                                                type="date"
+                                                style={{ width: "12rem" }}
+                                                className="my-input"
+                                                placeholder='Your pickup location'
+                                                onChange={inputPickupDate}
+                                                // value={todays}
+                                                min={todays}
+                                            />
+                                            <input type="Time"
+                                                className="timeInput"
+                                                onChange={(e) => setPickupTime(e.target.value)}
+                                            />
+                                        </div>
+                                        <div style={{ height: "0.3rem", color: "red", fontSize: "small" }}>
+                                            {errorPickup}
+                                        </div>
+                                    </div>
+                                    <div style={{ marginTop: "1rem" }}>
+
+                                        <span className="drop-time"  >Drop Up Date & Time</span>
+                                        <div style={{ display: "flex" }}>
+                                            <input
+                                                type="date"
+                                                style={{ width: "12rem" }}
+                                                className="my-input"
+                                                placeholder='Your pickup location'
+                                                onChange={inputDropupDate}
+                                                // value={todays}
+                                                min={todays}
+                                            />
+                                            <input type="Time"
+                                                className="timeInput"
+                                                onChange={(e) => setDropupTime(e.target.value)}
+                                            />
+                                        </div>
+                                        <div style={{ height: "0.3rem", color: "red", fontSize: "small" }}>
+                                            {errorDropDate}
+                                        </div>
+                                    </div>
+                                    <CustomButton onClick={handlarCarBooking} className="btn-book"> Continue</CustomButton>
+
+
+                                </div>
+                                {/* <div>
+                                   
+                                    <div className='input-side'>
+
+                                        <span className="input-lable" >FROM</span>
+                                        <input
+                                            type="text"
+                                            className="my-input col-8"
+                                            placeholder='Your pickup location'
+                                            onChange={inputFrom}
+                                        />
+                                    </div>
+                                    <div style={{ height: "0.8rem", color: "red", marginLeft: "9rem" }}>
+                                        {errorFrom}
+
+                                    </div>
+                                    <div className='input-side-date'>
+
+                                        <span className="input-lable" >DATE/TIME</span>
+                                        <input
+                                            type="date"
+                                            style={{ width: "8rem" }}
+                                            className="my-input"
+                                            placeholder='Your pickup location'
+                                            onChange={inputData}
+                                            // value={todays}
+                                            min={todays}
+                                        />
+
+                                        <div class="cs-form">
+
+                                            <input
+                                                type="time"
+                                                class="form-control"
+                                                value={times}
+                                                onChange={inputtime}
+                                                style={{ width: "8rem" }}
+                                            />
+                                        </div>
+
+                                    </div>
+
+                                    <div style={{ height: "0.3rem", color: "red", marginLeft: "9rem" }}>
+                                        {errorDate}
+                                    </div>
+                                    <div className='my-pack' id='myDropdown' >
+                                        <span className="input-lable-pack" >PACKAGES</span>
+                                        <select name="" id="dropdown" className='dropdown1' onChange={inputPackage} >
+                                            <option value="">Select Packages</option>
+                                            <option value="1 hrs 10 km">1 hrs 10 km </option>
+                                            <option value="2 hrs 20 km">2 hrs 30 km</option>
+                                            <option value="3 hrs 40 km">3 hrs 40 km</option>
+                                            <option value="5 hrs 60 km">5 hrs 60 km</option>
+                                            <option value="7 hrs 80 km">7 hrs 80 km</option>
+                                            <option value="9 hrs 100 km">9 hrs 100 km</option>
+                                            <option value="10 hrs 110 km">10 hrs 110 km</option>
+                                        </select>
+                                    </div>
+                                    <div style={{ height: "0rem", color: "red", marginLeft: "9rem", marginTop: "-1rem" }}>
+                                        {errorPackage}
+                                    </div>
+
+                                    <div className='btn-booking'>
+                                        <CustomButton onClick={handlarCarBooking}> Continue</CustomButton>
+                                    </div>
+
+
+                                </div> */}
                             </div>
+                            {/* </div> */}
 
                         </div>
                     )

@@ -34,7 +34,7 @@ export default function Dashbord() {
       <div className="banner-image w-100 vh-100 d-flex justify-content-left align-items-center" >
         <div className='justify-content-left align-items-center display-content' id='display'>
           <div className="text-left" id='text-head'>
-            <h1 className='text-white text-head' id='header-dashbord'>Book Your Cars Rental</h1>
+            <p className='text-white text-head' id='header-dashbord'>Find Right Choise Cars For Rent And Buy</p>
             {/* <h4 className='text-white text-mini' id='title-dashbord'>Fast & Easy Way To Rent A Car</h4> */}
             <h5 className='text-white text-third'  >Ready to hit the road? Browse our fleet and book <br />your perfect ride today.</h5>
           </div>

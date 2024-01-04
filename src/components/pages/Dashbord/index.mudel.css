@@ -10,10 +10,10 @@
 
 .text-head {
     margin-top: -5rem;
-    margin-left: 20rem;
-    font-size: 4rem;
-    font-family: Noto Sans Display SemiCondensed ExtraBold;
-
+    margin-left: 14rem;
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 
 .text-mini {

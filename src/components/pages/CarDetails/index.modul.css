@@ -9,32 +9,39 @@
 }
 
 .image-display {
-    border-radius: 0.5rem;
-    width: 35rem;
-    height: 25rem;
+    border-radius: 0.1rem;
+    width: 42rem;
+    /* height: 25rem; */
 }
 
 .image-side {
-    width: 20rem;
-    height: 12rem;
+    width: 8rem;
+    opacity: 0.5;
+    /* height: 12rem; */
+    cursor: pointer;
+}
+.image-side:hover{
+    opacity: 1;
 }
 
 .image-frame {
-    display: inline-flex;
+    /* display: inline-flex; */
     margin-top: 2rem;
 
 }
 
 .car-imag-mul {
     display: inline-flex;
-    /* width: 20rem; */
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 
 }
+.carframe{
+    display: flex;
+}
 
-.car-del {
+/* .car-del {
     margin: 2rem;
-}
+} */
 
 .hour-contant {
     border: 2px solid white;
@@ -77,12 +84,11 @@
 
 .booking-side {
     
-    margin: 2rem;
-    margin-left: 3rem;
+    margin-top: 5rem;
     background-color: white;
     padding: 2rem;
     box-shadow: 1px 1px 1px gray;
-    /* height: 40%; */
+    width: 16rem;
     /* border-left: 2px solid rgb(94, 89, 89); */
 }
 
@@ -103,7 +109,10 @@
     display: flex;
     font-size: small;
 }
-
+.timeInput{
+    border-radius: 0.3rem;
+    border: 1px solid grey;
+}
 .dropdown1 {
     padding: 0.1rem;
     width: 15.6rem;
@@ -170,13 +179,21 @@ date-input:focus {
     border-radius: 0.2rem;
 }
 
-.btn-booking {
+.btn-book {
     margin-top: 1rem;
-    margin-left: 7.5rem;
-
+    width: 12rem;
+    padding: 0.3rem;
+    background-color: #f33f3f;
+    color: white;
+    border: none;
 }
 .my-input{
-    width: 18rem;
+    margin: 0.1rem;
+    padding: 0.2rem;
+    width: 12rem;
+}
+.drop-time{
+    margin-top: 2rem;
 }
 
 .btn-btn-book {
@@ -205,18 +222,71 @@ date-input:focus {
     display: flex;
 }
 
-.line1 {
-    margin-left: 3.5rem;
-}
+
 
 .car-name {
     text-align: center;
+    font-size: 15px;
+}
+.line1{
+   /* margin-top: 1rem;  */
+   display: flex;
+   border-bottom: 1px solid rgb(231, 222, 222);
+}
+.line1 p{
+    font-weight: bold;
+}
+.line1 span{
+    margin-left: 2rem;
+    color: gray;
+}
+/* car details */
+.bn-CarDetaileBody {
+    background-color: #FFFFFF;
+    margin-top: 5rem;
+    width: 20rem;
+    box-shadow: 0px 1px 1px rgb(125, 120, 120);
+    /* margin-left: 50%; */
+    /* margin-bottom: -100px; */
+    margin-right: 28.4%;
+    /* height: 75%; */
+    /* background-color: #f1f3f8; */
+    /* padding: 1% 1% 2.5% 1%; */
+}
+.bn-CarDetaileBody p {
+    color: rgb(71, 64, 64);
+    margin-top: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+.bn-specification {
+    margin: 1rem;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
-.line2 {
-    margin-left: 3.5rem;
+.car-data {
+    border-bottom: 1px solid rgb(212, 207, 207);
+    padding: 0.4rem;
+    margin: 0.2rem;
+
 }
 
+.car-data .item2 {
+    margin-left: 10rem;
+    font-weight: bold;
+}
+
+ .item1 {
+    color: gray;
+    padding: 1rem;
+    font-size: 15px;
+}
+.car-data .vehicle-item {
+    margin-left: 1rem;
+    font-weight: bold;
+    font-size: 15px;
+}
 .img-posted {
     width: 50px;
     margin-left: 1.2rem;
@@ -238,12 +308,9 @@ date-input:focus {
 
 .amount-screen {
     background-color: #f33f3f;
-    padding: 0.2rem;
-    width: 30%;
-    height: 22%;
+    width: 10rem;
     color: white;
     text-align: center;
-    margin-left: 30%;
     border-radius: 5px;
     box-shadow: 1px 5px 5px gray;
 }
@@ -252,19 +319,20 @@ date-input:focus {
 }
 
 .book-title {
-    margin-left: 27%;
     text-transform: uppercase;
     font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .car-details {
-    margin-left: -1.9rem;
-    background-color: white;
+    margin-top: 5rem;
+    background-color: rgb(248, 243, 243);
     padding: 0.9rem;
-    width: 40rem;
+    width: 18rem;
     height: 30rem;
     border-radius: 0.2rem;
-    box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 1px 1px 0px 0px gray;
 }
 
 .posted-by {
@@ -272,7 +340,56 @@ date-input:focus {
     margin-top: 0rem;
     margin-left: 15rem;
 }
+.bookNow-fullImag {
+    /* border: 1px solid black; */
+    margin-top: 1pc;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 700.5px;
+    margin-left: 7%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 1px rgb(125, 120, 120);
 
+
+}
+
+.bookNow-fullImag img {
+    width: 56rem;
+    height: 380px;
+    margin-top: .6%;
+    padding: 1%;
+    margin-left: 2%;
+    
+
+}
+.boonNow-small-productList {
+    margin-left: 7%;
+    /* margin-right: 100.5%; */
+    /* background-color: #FFFFFF; */
+    /* box-shadow: 0px 1px 1px rgb(125, 120, 120); */
+    /* padding-bottom: .5%; */
+}
+
+.boonNow-small-productList img {
+    width: 13.95rem;
+    height: 85px;
+    margin: 10px 0;
+    cursor: pointer;
+    display: block;
+    /* border-radius: 5px; */
+    opacity: .6;
+    margin-right: 8px;
+    /* margin-left: 10px; */
+    box-shadow: 0px 2px 2px black;
+    /* box-shadow: 0px 1px 1px rgb(125, 120, 120); */
+
+}
+
+.boonNow-small-productList img:hover {
+    opacity: 1;
+    transform: scale(1.06);
+
+}
 
 
 @media (max-width:800px) {
@@ -319,10 +436,6 @@ date-input:focus {
     }
    
 
-    .line1 {
-        margin-left: 0rem;
-        margin: 0.5rem;
-    }
 
     /* .car-del-main {
         margin-top: 15rem;

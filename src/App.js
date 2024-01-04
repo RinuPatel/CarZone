@@ -14,7 +14,6 @@ import MyAccount from './components/pages/MyAccount';
 import Updatepassword from './components/pages/Updatepassword';
 import AboutUs from './components/pages/AboutUs';
 import ServerError from './components/Errors/ServerError';
-// import notFound from './errorCusmtome/notFound';
 
 
 

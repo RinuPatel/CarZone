@@ -17,10 +17,6 @@ const CarBoking = () => {
         if (data && data.status === 200) {
             const bookingDetails = data.bookingDetails || [];
             setCarStatus(bookingDetails)
-            // const mydate = bookingDetails.length >0 ?bookingDetails[1].date||"":""
-            
-            // setMyDate(myDates); // Set the array of dates in the state
-
         }
     }
     const isDataEmpty = !carStatus || carStatus.length === 0;
@@ -47,7 +43,7 @@ const CarBoking = () => {
                                 <h5 className='list-car'>Car</h5>
                                 <h5 className='list-from'>From</h5>
                                 <h5 className='list-crn'>CRN</h5>
-                                <h5 className='list-km'>Km </h5>
+                                {/* <h5 className='list-km'>Km </h5> */}
                                 <h5 className='list-total'>Total</h5>
                                 <h5 className='list-status'>Status</h5>
                             </div>
@@ -65,7 +61,7 @@ const CarBoking = () => {
                                                 <div className='item-frame'>
                                                     <table className='cb-table'>
                                                         <tr className='table-item'>
-                                                            <td>{data.date.slice(0,10)}</td>
+                                                            <td>{data.pickupDate.slice(0,10)}</td>
                                                             <td className='car-item'>  <img src="/image/caravatar.png" alt="" className='img-car' id='car-img' />{data.carName.slice(0, 8) + '...'}</td>
                                                             <td className='car-from'>
                                                                 <i className="fas fa-map-marker mx-2"></i>

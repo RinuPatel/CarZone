@@ -19,14 +19,15 @@
     width: auto;
     padding-bottom: 5px;
 } */
-
+.img-icon{
+    margin-left: -4rem;
+}
 .title-bar {
     font-family: 'Courier New', Courier, monospace;
-    /* text-transform: uppercase; */
     color: white;
-    font-size: 24px;
     font-weight: bolder;
     font-family: inherit;
+    margin-right: -2rem;
 }
 
 .title-bar:hover {
@@ -97,7 +98,8 @@ li:hover ul#submenu {
 
 .bg-black {
     background-color: rgb(213, 135, 135);
-    /* height: 4rem; */
+    height: 4rem;
+    
 }
 
 .navbar-toggler-icon {

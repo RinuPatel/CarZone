@@ -92,7 +92,7 @@ const Header = () => {
 
 
                 <div className="container">
-                   <Link to="/" className="navbar-brand title-bar" >CarRentZone</Link>
+                   <Link to="/" className="navbar-brand title-bar" ><img src="image/cars/car-icon2.png" alt="" style={{width:"150px"}} className="img-icon"/></Link>
                     <button
                         className="navbar-toggler"
                         type="button"

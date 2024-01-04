@@ -4,7 +4,7 @@
 
 .my-list {
     margin-top: 5rem;
-    margin-left: 4rem;
+    /* margin-left: 4rem; */
 }
 .black-text{
     color: black;
@@ -16,13 +16,13 @@
 }
 
 .item-title {
-    margin: 1rem;
+    margin-left: 2rem;
     display: inline-flex;
     border-bottom: 1px solid gray;
 }
 
 .categary-name {
-    margin: 1rem;
+    margin-left: 15rem;
 }
 
 .categary-type {
@@ -48,7 +48,7 @@
     color: white;
 }
 .car-fram {
-    width: 22rem;
+    width: 20rem;
     background-color: white;
     color: black;
     margin: 0rem;
@@ -80,7 +80,42 @@
     color: white;
 
 }
+.mainContaineInCar{
+    display: flex;
+}
+.yourCar-filterbar-container{
+    margin-left: 2rem;
+    
 
+}
+.yourCar-filterbar-container .car-seat-filter{
+    background-color: #ffffff;
+    width: 13rem;
+    box-shadow: 1px 1px 0px 0px grey;
+    padding: 1rem;
+}
+.car-seat-filter h6{
+    padding: 0.6rem;
+    margin-left: 0.3rem;
+    color: #f33f3f;
+    font-weight: bold;
+}
+.city-filter{
+    margin-top: 1rem;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 1px 1px 0px 0px grey;
+}
+.city-filter h6{
+    font-weight: bold; padding: 0.6rem;
+    margin-left: 0.3rem;
+    color: #f33f3f;
+    font-weight: bold;
+
+}
+
+
+/* media Query */
 @media  (max-width:800px) {
     .my-list {
         margin-left: 0rem;
