@@ -4,7 +4,7 @@
 }
 
 .banner-image {
-    background-image: url("/public/image/background_image/backgroun1.jpg");
+    background-image: url("../../../../public/image/background_image/backgroun1.jpg");
     background-size: cover;
 }
 

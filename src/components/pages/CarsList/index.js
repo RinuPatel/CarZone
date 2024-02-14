@@ -6,6 +6,8 @@ import CustomButton from '../../Element/CustomButton';
 import ServerError from '../../Errors/ServerError';
 import CustomCheckBox from '../../Element/CustomCheckBox';
 import { useNavigate } from 'react-router';
+import { isBefore, isAfter } from 'date-fns';
+import DateDiffrent from '../../DateDiffrent';
 
 const CarsList = (props) => {
     const Navigate = useNavigate()
@@ -13,6 +15,8 @@ const CarsList = (props) => {
     const [catearyName, setCatearyName] = useState()
     const [carItems, setCarItems] = useState([])
     const [isActive, setIsActive] = useState(false);
+    const [isChecked, setIsChecked] = useState(false);
+
     const [carSeaterList, setCarSeaterlLst] = useState([
         {
             title: "4 Seats"
@@ -30,7 +34,7 @@ const CarsList = (props) => {
             title: "All"
         },
     ])
-    const [cityFilter,setCityFilter] = useState([
+    const [cityFilter, setCityFilter] = useState([
         {
             title: "Surat"
         },
@@ -43,13 +47,21 @@ const CarsList = (props) => {
         {
             title: "Ahemdabad"
         },
-        
+
     ])
+    // console.log("my city", cityFilter);
+    const [timeDifference, setTimeDifference] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+    });
+
 
     var url_string = window.location;// it is get current page url
     var url = new URL(url_string);
     var myQuery = url.searchParams.get("city");
-    console.log("my query city here ==>", url);
+    // console.log("my query city here ==>", url);
     const handlerListOfCars = async () => {
         try {
             if (!myQuery) {
@@ -62,7 +74,7 @@ const CarsList = (props) => {
                 const data = await FetchApi('display-carlist?city=' + myQuery, "", {
                     method: "GET",
                 })
-                console.log("my data ", data);
+                // console.log("my data ", data);
                 setCarItems(data)
             }
         } catch (error) {
@@ -70,7 +82,7 @@ const CarsList = (props) => {
         }
     }
     const handlerOneCarDetails = (id) => {
-        console.log("my car is here", id)
+        // console.log("my car is here", id)
         window.location = window.location.href.split('?')[0] + "?q=" + id;
         window.location.href = MY_DOMAIN + "car-details?item_key=" + id;
         // Navigate(MY_DOMAIN + "car-details?item_key=" + id)
@@ -87,14 +99,67 @@ const CarsList = (props) => {
                 method: "GET",
             })
             setIsActive(true)
-            console.log("car data here=>",data);
+            // console.log("car data here=>", data);
 
             setCarItems(data)
         }
 
     }
+    // const [checkedCities, setCheckedCities] = useState({});
+    let selectCity = [];
+    const [checkedCities, setCheckedCities] = useState({
+        citys: []
+    })
 
-    console.log("my car categary", catearyName)
+    const handleChange = (e) => {
+        try {
+            //destructuring
+            const { value, checked } = e.target;
+            const { citys } = checkedCities
+            console.log(`${value} is ${checked} city ${checkedCities}`);
+            if (checked) {
+                selectCity.push(value)
+                setCheckedCities({
+                    citys: [...citys, value]
+                })
+                console.log("checked", checkedCities, selectCity);
+
+            } else {
+                setCheckedCities({
+                    citys: citys.filter((e) => e !== value)
+                })
+                selectCity = selectCity.filter((e) => e !== value);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const [permissions, setPermissions] = useState([]);
+
+
+    const handleCheck = async (event) => {
+        var permissions_array = [...permissions];
+        // console.log(permissions_array);
+        if (event.target.checked) {
+            permissions_array = [...permissions, event.target.value];
+            // console.log("if", permissions_array);
+        } else {
+            permissions_array.splice(permissions.indexOf(event.target.value), 1);
+            // console.log("else", permissions_array);
+        }
+        setPermissions(permissions_array);
+        console.log("my data city=>", permissions_array);
+        if (permissions_array) {
+            const url = 'display-carlist?city=' + permissions_array;
+            const data = await FetchApi(url, "", {
+                method: "GET",
+            })
+
+            // setCarItems(data)
+            console.log("my res",data);
+        }
+    };
+
     useEffect(() => {
         handlerListOfCars()
 
@@ -111,7 +176,7 @@ const CarsList = (props) => {
                         carItems && carItems.length > 0 ?
                             (
                                 <div>
-                                    <h3 id='title-h3 black-text'>CATEGARY</h3>
+                                    {/* <h3 id='title-h3 black-text'>CATEGARY</h3> */}
                                     <div className='categary-name' id='btn-cat' >
                                         <button className="categary-type mx-2" value="all cars" onClick={(e) => { handlerCarCategary() }} >All Cars</button>
                                         <button className='categary-type mx-2' value="BMW" onClick={(e) => { handlerCarCategary(e.target.value) }}>BMW </button>
@@ -128,9 +193,13 @@ const CarsList = (props) => {
                                                 {
                                                     carSeaterList.map((item, index) => {
                                                         return (
-                                                            <div>
+                                                            <div key={index}>
 
-                                                                <CustomCheckBox>{item.title}</CustomCheckBox>
+                                                                <CustomCheckBox
+
+                                                                >
+                                                                    {item.title}
+                                                                </CustomCheckBox>
                                                             </div>
                                                         )
                                                     })
@@ -141,9 +210,18 @@ const CarsList = (props) => {
                                                 {
                                                     cityFilter.map((item, index) => {
                                                         return (
-                                                            <div>
-
-                                                                <CustomCheckBox>{item.title}</CustomCheckBox>
+                                                            <div key={index}>
+                                                                {/* 
+                                                                <CustomCheckBox
+                                                                    key={index}
+                                                                    onClick={() => handleCityChange(!checkedCities[item.title], item)}
+                                                                    checked={checkedCities[item.title] || false}
+                                                                    value={item.title}
+                                                                >{item.title}</CustomCheckBox> */}
+                                                                <CustomCheckBox
+                                                                    value={item.title}
+                                                                    onChange={handleCheck}
+                                                                >{item.title}</CustomCheckBox>
                                                             </div>
                                                         )
                                                     })
@@ -154,24 +232,41 @@ const CarsList = (props) => {
                                         <div className=' text-white' id='main-sceen'>
                                             {
                                                 carItems.length > 0 && (
-                                                    <div className='item-list'>
-                                                        {carItems.map((items, index) => (
-                                                            <div className="mx-3  my-2 car-fram " id="car-fram"  >
-                                                                < img src={AppConfig.BASE_URL + "carImage/" + items.image[0]} className="card-img-top" alt="..." />
-                                                                <p >{items.carName}</p>
-                                                                <div className='item-title'>
-                                                                    <div className=''>
-                                                                        <p>Exterior: {items.exteriorColor}</p>
-                                                                        <p>Interior : {items.interiorColor}</p>
-                                                                    </div>
-                                                                    <div style={{ marginLeft: "0.1rem" }}>
-                                                                        <p>Seats: {items.seats}</p>
-                                                                        <p >City : {items.city}</p>
+                                                    <div className='item-list ' >
+                                                        {carItems.map((items, index) =>
+
+                                                        (
+                                                            <>
+                                                                <div className={`mx-3  my-2 car-fram `} id="car-fram" >
+                                                                    <div >
+
+                                                                        < img src={AppConfig.BASE_URL + "carImage/" + items.image[0]} className="card-img-top" alt="..." />
+                                                                        <p >{items.carName}</p>
+                                                                        <div className='item-title'>
+                                                                            <div className=''>
+                                                                                <p>Exterior: {items.exteriorColor}</p>
+                                                                                <p>Interior : {items.interiorColor}</p>
+                                                                            </div>
+                                                                            <div style={{ marginLeft: "0.1rem" }}>
+                                                                                <p>Seats: {items.seats}</p>
+                                                                                <p >City : {items.city}</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p style={{ fontWeight: "bold" }}>Per Day Rate:  {items.schedule}₹</p>
+                                                                        {items.isBooked ? (
+                                                                            <>
+
+                                                                                <p className='isBooked'>Booked Slot</p>
+                                                                                <p className='isBooked'>Available on  {items.onAvailble.days} day {items.onAvailble.hours} hours </p>
+
+                                                                            </>
+                                                                        ) :
+
+                                                                            <CustomButton onClick={(e) => { handlerOneCarDetails(items._id) }} > Rent It</CustomButton>
+                                                                        }
                                                                     </div>
                                                                 </div>
-                                                                <p style={{fontWeight:"bold"}}>Per Day Rate:  {items.schedule}₹</p>
-                                                                <CustomButton onClick={(e) => { handlerOneCarDetails(items._id) }}> Rent It</CustomButton>
-                                                            </div>
+                                                            </>
                                                         ))}
 
                                                     </div>

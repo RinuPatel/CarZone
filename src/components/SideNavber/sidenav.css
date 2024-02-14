@@ -1,6 +1,7 @@
 .account-screen{
     margin-top: 4rem;
-    background-color: #140e0e;
+    background-color: white;
+    color:black;
     width: 15%;
     height: 100vh;
     position: fixed;
@@ -12,10 +13,10 @@
     margin-left: 0rem;
     font-size: 20px;
     text-transform: uppercase;
-    color: cornsilk;
+    color: rgb(19, 19, 18);
 }
 .account-screen p{
-    color: cornsilk;
+    color: rgb(17, 16, 15);
     /* margin-top: 2rem; */
     margin: 0;
 }
@@ -23,6 +24,7 @@
     display: inline-flex;
     padding: 0rem;
     margin: 0;
+    /* background-color: black; */
 }
 .img-account img{
    
@@ -33,13 +35,13 @@
 .account-screen li{
     text-align: left;
     margin: 1.2rem;
-    color:cornsilk;
+    color:rgb(19, 19, 18);
     border-bottom: 1px solid rgb(48, 43, 43);
     width: auto;
     list-style-type: none;
 }
 .account-screen a{
-    color: cornsilk;
+    color: rgb(26, 25, 24);
     border: none;
     text-decoration: none;
   
@@ -111,13 +113,16 @@
   }
   .account-div{
       margin-top: 3.8rem;
-      background-color: black;
+      background-color: white;
       width: 4rem;
       height: 100vh;
       
   }
   .account-div #navbarNavSide{
       display: none;
+  }
+  .account-div #nav-item{
+    display: none;
   }
   .account-div button{
       margin-top: 0.8rem;

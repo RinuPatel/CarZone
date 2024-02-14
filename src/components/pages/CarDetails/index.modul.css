@@ -1,21 +1,21 @@
 .blackgroun {
     background-color: rgb(236, 231, 231);
-    /* height: 100vh; */
+    height: 100vh;
 }
 
 .car-del-main {
-    margin-top: 15rem;
-    margin: 2rem;
+    margin-top: 2rem;
+    /* margin: 2rem; */
 }
 
 .image-display {
     border-radius: 0.1rem;
-    width: 42rem;
+    width: 37rem;
     /* height: 25rem; */
 }
 
 .image-side {
-    width: 8rem;
+    width: 7rem;
     opacity: 0.5;
     /* height: 12rem; */
     cursor: pointer;
@@ -88,7 +88,7 @@
     background-color: white;
     padding: 2rem;
     box-shadow: 1px 1px 1px gray;
-    width: 16rem;
+    /* width: 16rem; */
     /* border-left: 2px solid rgb(94, 89, 89); */
 }
 
@@ -190,7 +190,7 @@ date-input:focus {
 .my-input{
     margin: 0.1rem;
     padding: 0.2rem;
-    width: 12rem;
+    /* width: 12rem; */
 }
 .drop-time{
     margin-top: 2rem;

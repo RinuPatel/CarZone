@@ -92,7 +92,10 @@ const Header = () => {
 
 
                 <div className="container">
-                   <Link to="/" className="navbar-brand title-bar" ><img src="image/cars/car-icon2.png" alt="" style={{width:"150px"}} className="img-icon"/></Link>
+                    <Link to="/" className="navbar-brand title-bar" >
+                        {/* <img src="image/cars/car-icon2.png" alt="" style={{ width: "150px" }} className="img-icon" /> */}
+                        WheelsHub
+                        </Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -100,7 +103,7 @@ const Header = () => {
                         data-bs-target="#navbarNav"
                         aria-controls="navbarNav"
                         aria-expanded="false"
-                    // aria-label="Toggle navigation"
+                        aria-label="Toggle navigation"
                     >
 
 
@@ -117,24 +120,24 @@ const Header = () => {
                         <div className="mx-auto" ></div>
                         <ul className='navbar-nav ms-auto'  >
                             <li className={isLinkActive('/') ? 'active' : ''} >
-                               <Link to="/" className={` ${isScrolled ? "nav-link bg-light" : "nav-link text-white"}`}>Home</Link>
+                                <Link to="/" className={` ${isScrolled ? "nav-link bg-light" : "nav-link text-white"}`}>Home</Link>
                             </li>
                             <li className={isLinkActive('/cars-list') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
-                               <Link to="/cars-list" className="nav-link text-white">Fleet</Link>
+                                <Link to="/cars-list" className="nav-link text-white">Fleet</Link>
                             </li>
                             <li className={isLinkActive('/about-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
-                               <Link to="/about-us" className="nav-link text-white">About</Link>
+                                <Link to="/about-us" className="nav-link text-white">About</Link>
                             </li>
                             <li className={isLinkActive('/cantact-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
-                               <Link to="/cantact-us" className="nav-link text-white">Contact Us</Link>
+                                <Link to="/cantact-us" className="nav-link text-white">Contact Us</Link>
                             </li>
-                            <li className={isLinkActive('/h') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
+                            {/* <li className={isLinkActive('/h') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
                                <Link to="http://localhost:3001/" className="nav-link text-white">Drive</Link>
-                            </li>
+                            </li> */}
                             {!istoken ?
                                 <li className={isLinkActive('/login') ? 'active ' : ''} style={{ paddingLeft: "1rem" }}>
 
-                                   <Link to="/login" className="nav-link "  >
+                                    <Link to="/login" className="nav-link "  >
                                         <img src="p2.png" alt="" style={{ width: "22px" }} /></Link>
 
 

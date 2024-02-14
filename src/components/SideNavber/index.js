@@ -3,6 +3,7 @@ import './sidenav.css';
 import Updatepassword from '../pages/Updatepassword';
 import MyAccount from '../pages/MyAccount';
 import FetchApi from '../../constants/FetchApi';
+import { Link } from 'react-router-dom';
 
 const SideNavbar = (props) => {
     // console.log("My props ===>", props)
@@ -21,9 +22,9 @@ const SideNavbar = (props) => {
     const handlerupdateAccount = () => {
         setUpdateAccount(true)
     }
-    const handleLinkClick = () => {
-        setUpdateComponent(true);
-    };
+    // const handleLinkClick = () => {
+    //     setUpdateComponent(true);
+    // };
     const handlerUserName = async () => {
         const data = await FetchApi("getuser-name", "", {
             method: "GET"
@@ -35,67 +36,71 @@ const SideNavbar = (props) => {
         handlerUserName()
     })
     return (
-        <>  <div>
-            <div
-                className={!isSidebarOpen ? `account-screen` : "account-div"}
-                id='account-div'>
-                {/* <button  onClick={toggleSidebar}>
+        <>
+            <div>
+                <div>
+                    <div
+                        className={!isSidebarOpen ? `account-screen` : "account-div"}
+                        id='account-div'>
+                        {/* <button  onClick={toggleSidebar}>
                     &times;
-                </button> */}
-                <button
-                    className="navbar-toggler side-nav"
-                    onClick={toggleSidebar}
-                >
-                    <span className="navbar-toggler-icon">
-                        <div className="line" style={{ backgroundColor: "rgb(226, 213, 213)" }}></div>
-                        <div className="line" style={{ backgroundColor: "rgb(226, 213, 213)" }} ></div>
-                        <div className="line" style={{ backgroundColor: "rgb(226, 213, 213)" }}></div>
-                    </span>
+                         </button> */}
+                        <button
+                            className="navbar-toggler side-nav"
+                            onClick={toggleSidebar}
+                        >
+                            <span className="navbar-toggler-icon">
+                                <div className="line" style={{ backgroundColor: "rgb(226, 213, 213)" }}></div>
+                                <div className="line" style={{ backgroundColor: "rgb(226, 213, 213)" }} ></div>
+                                <div className="line" style={{ backgroundColor: "rgb(226, 213, 213)" }}></div>
+                            </span>
 
-                </button>
+                        </button>
 
-                <div id='navbarNavSide'>
+                        <div id='navbarNavSide'>
 
-                    <div className='img-account'>
-                        <div>
-                            <img src="icon_pro.png" alt="" style={{ width: "50px" }} />
+                            <div className='img-account'>
+                                <div>
+                                    <img src="all image/person.svg" alt="" style={{ width: "50px" }} />
+                                    {/* <i class="bi bi-person"></i> */}
+                                </div>
+                                <div className='user-name'>
+
+                                    <p>Registered</p>
+                                    <h3>Hey {name}</h3>
+
+                                </div>
+                            </div>
                         </div>
-                        <div className='user-name'>
-
-                            <p>Registered</p>
-                            <h3>Hey {name}</h3>
-
-                        </div>
-                    </div>
-                    <div className='nav-item'>
-                        <li>
-                            <a href="">Profile</a>
-                        </li>
-                        <div className='side-menu'>
-                            <p className='item-sidenav'>
-                                <i className="fas fa-user mx-2" />
-                                <a href='my-account' onClick={handlerupdateAccount} >My account</a>
-                            </p>
-                            <p className='item-sidenav'>
-                                <i className="fas fa-key mx-2" style={{ margin: "0px" }} />
-                                <a href="update-password" onClick={handleLinkClick}>Update Password</a>
-                            </p>
-                            <p className='item-sidenav'>
-                                <i className="fas fa-bus mx-2" style={{ margin: "0px" }} />
-                                <a href="car-booking-status" >Your Trip</a>
-                            </p>
+                        <div className='nav-item' id="nav-item">
+                            <li>
+                                <a href="">Profile</a>
+                            </li>
+                            <div className='side-menu'>
+                                <p className='item-sidenav'>
+                                    <i className="fas fa-user mx-2" />
+                                    <Link to='/my-account' onClick={handlerupdateAccount} >My account</Link>
+                                </p>
+                                <p className='item-sidenav'>
+                                    <i className="fas fa-key mx-2" style={{ margin: "0px" }} />
+                                    <Link  to='/update-password' >Update Password</Link>
+                                </p>
+                                <p className='item-sidenav'>
+                                    <i className="fas fa-bus mx-2" style={{ margin: "0px" }} />
+                                    <Link to="/car-booking-status" >Your Trip</Link>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            {/* <div>
+                {/* <div>
                 {updateAcount && <div><MyAccount/></div>}
             </div>
                 <div>
                 {updateComponent&& <div> <Updatepassword/></div>}
                 </div>  */}
 
-        </div>
+            </div>
         </>
     )
 }
