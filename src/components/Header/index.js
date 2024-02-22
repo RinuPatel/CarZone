@@ -85,17 +85,15 @@ const Header = () => {
     };
     return (
         <>
-            {/* <div className="my-title-area">
-                <h1>Go car randetal</h1>
-            </div> */}
+          
             <nav className="navbar navbar-expand-lg  fixed-top bg-black">
 
 
                 <div className="container">
                     <Link to="/" className="navbar-brand title-bar" >
-                        {/* <img src="image/cars/car-icon2.png" alt="" style={{ width: "150px" }} className="img-icon" /> */}
+                        {/* <img src="icons/logo.jpeg" alt="" style={{ width: "100px" }} className="img-icon" /> */}
                         WheelsHub
-                        </Link>
+                    </Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -124,18 +122,32 @@ const Header = () => {
                             </li>
                             <li className={isLinkActive('/cars-list') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
                                 <Link to="/cars-list" className="nav-link text-white">Fleet</Link>
+
                             </li>
+                            <li className={isLinkActive('/gallery') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
+                                <Link to="/gallery" className="nav-link text-white">Gallary</Link>
+
+                            </li>
+                            <li className={isLinkActive('/cantact-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
+                                <Link to="/cantact-us" className="nav-link text-white">Team</Link>
+                            </li>
+                            <li className={isLinkActive('/cantact-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
+                                <Link to="/cantact-us" className="nav-link text-white">FAQ</Link>
+                            </li>
+
                             <li className={isLinkActive('/about-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
                                 <Link to="/about-us" className="nav-link text-white">About</Link>
                             </li>
                             <li className={isLinkActive('/cantact-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
                                 <Link to="/cantact-us" className="nav-link text-white">Contact Us</Link>
                             </li>
+
+
                             {/* <li className={isLinkActive('/h') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
                                <Link to="http://localhost:3001/" className="nav-link text-white">Drive</Link>
                             </li> */}
                             {!istoken ?
-                                <li className={isLinkActive('/login') ? 'active ' : ''} style={{ paddingLeft: "1rem" }}>
+                                <li >
 
                                     <Link to="/login" className="nav-link "  >
                                         <img src="p2.png" alt="" style={{ width: "22px" }} /></Link>

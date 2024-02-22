@@ -1,26 +1,28 @@
 .blackgroun {
     background-color: rgb(236, 231, 231);
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .car-del-main {
+    margin: 2rem;
     margin-top: 2rem;
     /* margin: 2rem; */
 }
 
 .image-display {
     border-radius: 0.1rem;
-    width: 37rem;
+    width: 52rem;
     /* height: 25rem; */
 }
 
 .image-side {
-    width: 7rem;
+    width: 10rem;
     opacity: 0.5;
     /* height: 12rem; */
     cursor: pointer;
 }
-.image-side:hover{
+
+.image-side:hover {
     opacity: 1;
 }
 
@@ -35,13 +37,14 @@
     /* flex-wrap: wrap; */
 
 }
-.carframe{
+
+.carframe {
     display: flex;
 }
 
-/* .car-del {
-    margin: 2rem;
-} */
+.car-del {
+    margin-left: 1rem;
+}
 
 .hour-contant {
     border: 2px solid white;
@@ -83,7 +86,7 @@
 }
 
 .booking-side {
-    
+
     margin-top: 5rem;
     background-color: white;
     padding: 2rem;
@@ -109,24 +112,27 @@
     display: flex;
     font-size: small;
 }
-.timeInput{
+
+.timeInput {
     border-radius: 0.3rem;
     border: 1px solid grey;
 }
+
 .dropdown1 {
     padding: 0.1rem;
     width: 15.6rem;
     /* display: none; */
     background-color: white;
 }
-.dropdown option{
+
+.dropdown option {
     background-color: #f33f3f;
 }
 
 .date {
     margin: 0.3rem;
     padding: 0.3rem;
-   
+
 }
 
 
@@ -170,7 +176,7 @@ date-input:focus {
     width: 5rem;
     font-weight: bolder;
     margin-left: 2.3rem;
-    
+
 }
 
 .input-days {
@@ -187,12 +193,14 @@ date-input:focus {
     color: white;
     border: none;
 }
-.my-input{
+
+.my-input {
     margin: 0.1rem;
     padding: 0.2rem;
     /* width: 12rem; */
 }
-.drop-time{
+
+.drop-time {
     margin-top: 2rem;
 }
 
@@ -228,37 +236,45 @@ date-input:focus {
     text-align: center;
     font-size: 15px;
 }
-.line1{
-   /* margin-top: 1rem;  */
-   display: flex;
-   border-bottom: 1px solid rgb(231, 222, 222);
+
+.line1 {
+    /* margin-top: 1rem;  */
+    display: flex;
+    border-bottom: 1px solid rgb(231, 222, 222);
 }
-.line1 p{
+
+.line1 p {
     font-weight: bold;
 }
-.line1 span{
+
+.line1 span {
     margin-left: 2rem;
     color: gray;
 }
+
 /* car details */
 .bn-CarDetaileBody {
     background-color: #FFFFFF;
     margin-top: 5rem;
-    width: 20rem;
+    margin-left: 1rem;
+    width: 30rem;
     box-shadow: 0px 1px 1px rgb(125, 120, 120);
-    /* margin-left: 50%; */
-    /* margin-bottom: -100px; */
     margin-right: 28.4%;
-    /* height: 75%; */
-    /* background-color: #f1f3f8; */
-    /* padding: 1% 1% 2.5% 1%; */
+    height: 75%;
+    box-shadow: 0 10px 15px 0 rgb(173, 165, 165);
 }
+
 .bn-CarDetaileBody p {
     color: rgb(71, 64, 64);
     margin-top: 1rem;
     padding: 0.5rem;
-    margin: 1rem;
+    /* margin: 1rem; */
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
 }
+
 .bn-specification {
     margin: 1rem;
     margin-top: 20px;
@@ -277,16 +293,18 @@ date-input:focus {
     font-weight: bold;
 }
 
- .item1 {
+.item1 {
     color: gray;
     padding: 1rem;
     font-size: 15px;
 }
+
 .car-data .vehicle-item {
     margin-left: 1rem;
     font-weight: bold;
     font-size: 15px;
 }
+
 .img-posted {
     width: 50px;
     margin-left: 1.2rem;
@@ -314,7 +332,8 @@ date-input:focus {
     border-radius: 5px;
     box-shadow: 1px 5px 5px gray;
 }
-.amount-screen p h1{
+
+.amount-screen p h1 {
     color: white;
 }
 
@@ -340,6 +359,7 @@ date-input:focus {
     margin-top: 0rem;
     margin-left: 15rem;
 }
+
 .bookNow-fullImag {
     /* border: 1px solid black; */
     margin-top: 1pc;
@@ -359,9 +379,10 @@ date-input:focus {
     margin-top: .6%;
     padding: 1%;
     margin-left: 2%;
-    
+
 
 }
+
 .boonNow-small-productList {
     margin-left: 7%;
     /* margin-right: 100.5%; */
@@ -420,21 +441,24 @@ date-input:focus {
         width: 70%;
         border-radius: 0.3rem;
     }
-    .car-details{
+
+    .car-details {
         width: 35rem;
         margin-bottom: 2rem;
     }
-    .car-frame{
+
+    .car-frame {
         margin-left: 4rem;
         width: 80%;
         border: none;
     }
+
     .posted-by {
         display: flex;
         margin-top: 0rem;
         margin-left: 2rem;
     }
-   
+
 
 
     /* .car-del-main {
@@ -447,46 +471,21 @@ date-input:focus {
         margin: 0.5rem;
     }
 
-    
+
     .txt {
         font-weight: lighter;
     }
 
-    /* #form-side {
-        display: block;
-        margin-left: 0;
-    } */
-
-    /* .hour-contant {
-        border: 2px solid white;
-        width: 3.5rem;
-        font-size: 10px;
-        height: 4rem;
-     
-        border-radius: 1rem;
-        background-color: transparent;
-        color: white;
-    }
-
-    #cst {
-        display: block;
-    }
-
-    .date-input {
-        width: 4rem;
-    }
-    .booking-side{
-        margin-top: 15rem;
-     } */
-
 }
-@media (min-width:456px) and (max-width:1080px){
- .image-display{
-    width: 30rem;
- }
- .booking-side{
-    margin-top: 15rem;
- }
+
+@media (min-width:456px) and (max-width:1080px) {
+    .image-display {
+        width: 30rem;
+    }
+
+    .booking-side {
+        margin-top: 15rem;
+    }
 
 }
 
@@ -494,3 +493,79 @@ date-input:focus {
     margin-top: 20%;
     margin-left: 50%;
 }
+
+/* car booking  */
+
+.carBooking_Container {
+    margin: 1rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color:  white;
+    box-shadow: 0 10px 15px 0 rgba(154, 148, 146, 0.35);
+}
+
+.carBooking_Container .carBooking_item_input{
+    display: flex;
+    margin: 1rem;
+}
+.carBooking_Container .carBooking_item_input .form_field {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.carBooking_Container .carBooking_item_input .form_field label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.carBooking_Container .carBooking_item_input .form_field .bold_hash {
+    color: #f33f3f;
+}
+
+.carBooking_Container .carBooking_item_input .form_field input{
+    color: #ababab;
+    font-family: "Rubik", sans-serif;
+    border: 1px solid #ccd7e6;
+    border-radius: 3px;
+    font-weight: 400;
+    width: 25rem;
+    padding: 0.6rem;
+    outline: none;
+}
+
+.carBooking_Container .carBooking_item_input .form_field button{
+    margin-top: 3.5rem;
+    padding: 0.6rem;
+   
+    border: none;
+    font-family: "Rubik", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    background-color: #ff4d30;
+    box-shadow: 0 10px 15px rgba(255, 83, 48, 0.35);
+    cursor: pointer;
+  
+    width: 25rem;
+}
+
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 1rem ;
+    margin-bottom: 1.8rem;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    /* display: none; */
+    justify-content: space-between;
+    align-items: center;
+  }
+  .error-message i {
+    cursor: pointer;
+  }

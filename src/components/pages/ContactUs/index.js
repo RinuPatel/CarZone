@@ -111,7 +111,7 @@ const ContactUs = () => {
                 {/* <center></center> */}
                 <div class="container">
                     <p style={{ textAlign: "center" }}>If you have any query related website or anything else, you can contact us via filling the contact us form.</p>
-                    <div class="row ">
+                    <div class=" ">
                         <div class="col-lg-8 mx-auto " >
                             <div class="card mt-4 mx-auto p-4  bg-light" >
                                 <div class="card-body bg-light mx-4">

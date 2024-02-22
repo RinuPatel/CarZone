@@ -1,6 +1,7 @@
 * {
     width: auto;
     height: auto;
+    /* background-color: aliceblue; */
 }
 
 .banner-image {
@@ -346,8 +347,7 @@
     .banner-image {
         background-size: cover;
         background-image: url("/public/image/background_image/backgroun1.jpg");
-        /* background-repeat: no-repeat; */
-        /* background-position: center center; */
+        
     }
 
     #header-dashbord {

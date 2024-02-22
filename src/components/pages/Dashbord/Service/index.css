@@ -1,0 +1,100 @@
+.main{
+    margin-top: -8rem;
+}
+
+.main .service h3{
+    color: red;
+   font-family: cursive;
+   font-size: 20px;
+   text-align: center;
+   }
+   
+   .main .service h1{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: 50px;
+   /* padding-left: 800px; */
+   text-align: center;
+   }
+
+   .row{
+    align-items: center;
+    width: 130%;
+   }
+   
+   .col-sm-2 {
+      display: flex;
+     
+      padding-right: 30px;
+      width: 50rem;
+      /* height: 300px; */
+      border: 1px solid;
+      margin-left: 40px;
+      padding-left: 40px;
+      padding-top: 20px;
+      box-shadow: 2px 4px 6px;
+   
+   }
+   
+   .main .service .container .row .col-sm-2 .txt{
+       padding-left: 10px;
+       padding-right: 5px;
+   }
+   .main .service .container .row .col-sm-2 .icon1{
+       width:  190px;
+       /* width: 50rem; */
+       height: 30px;
+       background-image: url('../../../../../public/icons/car.png');
+       background-size: cover;
+       background-color: red;
+       
+   }
+   
+   .main .service .container .row .col-sm-2 .icon2{
+       width:  160px;
+       height: 30px;
+       background-image: url('../../../../../public/icons/like.png');
+       background-size: cover;
+       background-color: red;
+       
+   }
+   
+   .main .service .container .row .col-sm-2 .icon3{
+       width:  160px;
+       height: 30px;
+       background-image: url('../../../../../public/icons/cal.png');
+       background-size: cover;
+       background-color: red;
+       
+   }
+   .main .service .container .row .col-sm-2 .icon4{
+       width:  160px;
+       height: 30px;
+       background-image: url('../../../../../public/icons/star.png');
+       background-size: cover;
+       background-color: red;
+       
+   } 
+   
+   
+   /* *************************************** Our team *********************** */
+   .main .team .container{
+       margin-top: 50px;
+       display: flex;
+       margin-right: 300px;
+    
+   }
+   .main .team  h4{
+       color: red;
+       font-family: cursive;
+       padding-left: 650px;
+       padding-top: 20px;
+   }
+   .main .team h1{
+       padding-left: 650px;
+       color: rgb(21, 21, 53);
+       font-size: 45px;
+   }
+   
+   
+   
+   

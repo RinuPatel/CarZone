@@ -14,6 +14,18 @@ import MyAccount from './components/pages/MyAccount';
 import Updatepassword from './components/pages/Updatepassword';
 import AboutUs from './components/pages/AboutUs';
 import ServerError from './components/Errors/ServerError';
+import Gallery from './components/pages/Gallery'
+import All from './components/pages/GelleryImage/All'
+import Honda from './components/pages/GelleryImage/Honda';
+import MarutiSuzuki from './components/pages/GelleryImage/MarutiSuzuki'
+import Mahindra from './components/pages/GelleryImage/Mahindra';
+import Tata from './components/pages/GelleryImage/Tata'
+import Toyota from './components/pages/GelleryImage/Toyota';
+import RentAndBuyCar from './components/pages/Dashbord/Rent&Buy';
+import Contact from './components/pages/Contact'
+// import BookCar from './components/pages/BookCar';
+// import BookCar from './components/BookCar';
+// import '../src/dist/styles.css'
 
 
 
@@ -23,6 +35,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
+        {/* <Route path='/buyAndSale' element={<RentAndBuyCar/>}/> */}
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Dashbord />} />
         <Route path="/cars-list" element={<CarsList />} />
@@ -31,24 +44,25 @@ function App() {
         <Route path="/car-booking-status" element={<CarBoking />} />
         <Route path="/booking-confiem" element={<BookingConfiem/>}/>
         <Route path="/cantact-us" element={<ContactUs/>}/>
+        <Route path="/contact" element={<Contact/>} />
         <Route path="/my-account" element={<MyAccount/>}/>
         <Route path="/update-password" element={<Updatepassword/>}/>
         <Route path="/about-us" element={<AboutUs/>}/>
         <Route path="/server-error" element={<ServerError/>}/>
         <Route path="/page-loader" element={<PageLoader/>}/>
+        <Route path="/gallery" element={<Gallery/>}/>
+        {/* <Route path='/car-book' element={<BookCar/>}/> */}
+        {/* <Route path='/book-car' element={<BookCar/>}/> */}
+
+      <Route path="/all" element={<All/>}/>
+      <Route path='/honda' element={<Honda/>}/>
+      <Route path='/MarutiSuzuki' element={<MarutiSuzuki/>}/>
+      <Route path="/Mahindra" element={<Mahindra/>}/>
+      <Route path="/Tata" element={<Tata/>}/>
+      <Route path="/Toyoto" element={<Toyota/>}/>
+
         </Routes>
     </BrowserRouter>
-//     <Router>
-//       <Switch>
-//        <Route path="/register">
-//        <Register />
-//        </Route>
-//        <Route path="/">
-//        <Dashbord />
-//        </Route>
-// 
-//       </Switch>
-//     </Router>
 
   );
 }

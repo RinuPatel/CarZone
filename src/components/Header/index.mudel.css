@@ -1,24 +1,10 @@
 /* title area */
+
 .my-title-area {
     background-color: black;
     height: 6%;
 }
 
-
-
-/* .btn-login{
-    background-color: transparent;
-    padding: 0.3rem;
-    width: 5rem;
-    border-radius: 2rem;
-    font-weight: bolder;
-} */
-/* .login li:hover{
-    float: left;
-    position: relative;
-    width: auto;
-    padding-bottom: 5px;
-} */
 .img-icon{
     margin-left: -4rem;
 }
@@ -30,15 +16,6 @@
     margin-right: -2rem;
 }
 
-/* .title-bar:hover {
-    font-family: 'Courier New', Courier, monospace;
-    text-transform: uppercase;
-    color: white;
-    font-size: 24px;
-    font-weight: bolder;
-    font-family: inherit;
-} */
-
 .my-dropdown li {
     float: left;
     position: relative;
@@ -47,7 +24,7 @@
 
 .my-dropdown .profile-item {
     margin-top: -1.4rem;
-    margin-left: 60rem;
+    margin-left: 69rem;
     background: rgb(5, 5, 5);
     width: 15rem;
     color: rgb(236, 220, 227);
@@ -84,11 +61,6 @@ li:hover ul#submenu {
 .profile-item:hover{
     background-color: #f33f3f;
 }
-
-/* #submenu li {
-    float: none;
-    width: 100%;
-} */
 
 #item-menu {
     background-color: inherit;
@@ -178,7 +150,7 @@ a.nav-link {
    
     .my-dropdown .profile-item {
         margin-top: 0rem;
-        margin-left: 10rem;
+        margin-left: 15rem;
         background: black;
         width: 17rem;
         color: rgb(236, 220, 227);
