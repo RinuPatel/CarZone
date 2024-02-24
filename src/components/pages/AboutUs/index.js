@@ -1,5 +1,11 @@
 import Footer from '../../Footer'
 import './aboutUs.css'
+import { Link } from 'react-router-dom'
+import AboutMain from "../../../images/about/about-main.jpg";
+import Box1 from "../../../images/about/icon1.png"
+import Box2 from "../../../images/about/icon2.png";
+import Box3 from "../../../images/about/icon3.png";
+import PlanTrip from '../../PlanTrip';
 
 
 const AboutUs = () => {
@@ -7,8 +13,15 @@ const AboutUs = () => {
     return (
         <>
             <div className='w-100  about-screen'>
+                <div className="bgImage">
+                    <ul>
+                        <h2>ABOUT</h2>
+                        <Link to="/">Home </Link> <Link to="/about">/About</Link>
+                    </ul>
 
-                <div className=' about-us'>
+
+                </div>
+                {/* <div className=' about-us'>
                     <h3>About us</h3>
                     <div className='first-car'>
                         <div className='img'>
@@ -33,13 +46,60 @@ const AboutUs = () => {
                             has the ideal solution for you.</p>
                         <p>We believe in transparency and fair pricing. With no hidden fees and competitive rates, you can trust us to offer
                             a budget-friendly rental experience.</p>
-                        {/* <p>GoCarRantals is more than just a rental agency; we're your travel companion. Let us be a part 
-                                 of your journey, making memories that last a lifetime.</p> */}
                     </div>
                     <div className='cars-img ' >
                         <img src="car1.jpeg" alt="" />
                     </div>
-                </div>
+                </div> */}
+
+                <section className="container about-page">
+                    {/* <HeroPages name="About" /> */}
+                    <div className="container">
+                        <div className="about-main">
+                            <img
+                                className="about-main__img"
+                                src={AboutMain}
+                                alt="car-renting"
+                            />
+                            <div className="about-main__text">
+                                {/* <h3>About Company</h3> */}
+                                <h2>You start the engine and your adventure begins</h2>
+                                <p>
+                                    Certain but she but shyness why cottage. Guy the put instrument
+                                    sir entreaties affronting. Pretended exquisite see cordially the
+                                    you. Weeks quiet do vexed or whose. Motionless if no to
+                                    affronting imprudence no precaution. My indulged as disposal
+                                    strongly attended.
+                                </p>
+                                <div className="about-main__text__icons">
+                                    <div className="about-main__text__icons__box">
+                                        <img src={Box1} alt="car-icon" />
+                                        <span>
+                                            <h4>20</h4>
+                                            <p>Car Types</p>
+                                        </span>
+                                    </div>
+                                    <div className="about-main__text__icons__box">
+                                        <img src={Box2} alt="car-icon" />
+                                        <span>
+                                            <h4>85</h4>
+                                            <p>Rental Outlets</p>
+                                        </span>
+                                    </div>
+                                    <div className="about-main__text__icons__box">
+                                        <img src={Box3} alt="car-icon" className="last-fk" />
+                                        <span>
+                                            <h4>75</h4>
+                                            <p>Repair Shop</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <PlanTrip />
+                    </div>
+                </section>
+           
                 <Footer />
             </div>
         </>

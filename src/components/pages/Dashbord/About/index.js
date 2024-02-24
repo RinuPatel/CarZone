@@ -4,7 +4,7 @@ import './index.css'
 export default function About() {
   return (
     <>
-    <div className='main'>
+    <div className='container'>
 
           <div className="about">
           <button>Discover More</button>

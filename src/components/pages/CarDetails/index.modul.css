@@ -524,7 +524,7 @@ date-input:focus {
     color: #f33f3f;
 }
 
-.carBooking_Container .carBooking_item_input .form_field input{
+.carBooking_Container .carBooking_item_input .form_field .input_control{
     color: #ababab;
     font-family: "Rubik", sans-serif;
     border: 1px solid #ccd7e6;

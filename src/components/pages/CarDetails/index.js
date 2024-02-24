@@ -3,9 +3,10 @@ import FetchApi from '../../../constants/FetchApi'
 import './index.modul.css'
 import CustomButton from '../../Element/CustomButton'
 import AppConfig from '../../../constants/AppConfig'
-
 import PageLoader from '../../PageLoader'
 import Cookies from 'js-cookie'
+import SlideImage from '../../SlideImage'
+import { Timeit } from 'react-timeit'
 
 const CarDetails = () => {
     const [myCarDetails, setMyCarDetails] = useState({})
@@ -29,14 +30,11 @@ const CarDetails = () => {
     function sliderGallery(smallImg) {
         setCurrentImage(smallImg);
     }
-    // console.log("today date", times);
-    // setToday(todays);
 
     let isAllData = true;
     var url_string = window.location;// it is get current page url
     var url = new URL(url_string);
     var myCarKey = url.searchParams.get("item_key");
-    // console.log("my car key", myCarKey)
     const handlerDisplayOneCarDetails = async () => {
         if (myCarKey) {
             const data = await FetchApi("/display-carlist?item_id=" + myCarKey, "", {
@@ -49,7 +47,6 @@ const CarDetails = () => {
 
 
     }
-    // console.log("my image here == > ", myCarDetails.registerYear);
     const dateString = myCarDetails.registerYear
     const makeYear = myCarDetails.makeYear
     const carRating = myCarDetails.schedule ? myCarDetails.schedule : "";
@@ -85,13 +82,6 @@ const CarDetails = () => {
             setErrorDropDate("")
         }
     }
-    // const inputtime = (e) => {
-    //     const value = e.target.value;
-    //     setTimes(value)
-    //     if (value) {
-    //         setErrorDate("")
-    //     }
-    // }
 
     const handlarCarBooking = async () => {
         try {
@@ -122,7 +112,7 @@ const CarDetails = () => {
             console.log(carRating);
             if (carRating) {
                 console.log("my ref",pRef.current);
-                // if (pRef.current) {
+                if (isAllData === true) {
                     const Date1 = new Date(pickupDate)
                     const date2 = new Date(dropupDate)
                     const differenceInMilliseconds = Math.abs(Date1 - date2);
@@ -156,7 +146,7 @@ const CarDetails = () => {
                         }
                     }
 
-                // }
+                }
             }
 
         } catch (error) {
@@ -334,7 +324,7 @@ const CarDetails = () => {
                                         <input type='text'
                                             placeholder='location'
                                             onChange={inputFrom}
-
+                                            className='input_control'
                                         />
                                     </div>
                                     <div className='form_field'>
@@ -344,6 +334,7 @@ const CarDetails = () => {
                                             type="date"
                                             onChange={inputPickupDate}
                                             min={todays}
+                                            className='input_control'
                                         />
                                     </div>
                                     <div className='form_field'>
@@ -353,6 +344,7 @@ const CarDetails = () => {
                                             type="date"
                                             onChange={inputDropupDate}
                                             min={todays}
+                                            className='input_control'
                                         />
                                     </div>
                                 </div>
@@ -364,6 +356,7 @@ const CarDetails = () => {
                                         <input
                                             type="time"
                                             onChange={(e) => setPickupTime(e.target.value)}
+                                            className='input_control'
                                         />
                                     </div>
                                     <div className='form_field'>
@@ -372,7 +365,9 @@ const CarDetails = () => {
                                         <input
                                             type="time"
                                             onChange={(e) => setDropupTime(e.target.value)}
+                                            className='input_control'
                                         />
+                                       
                                     </div>
                                     <div className='form_field'>
                                         <button onClick={handlarCarBooking}>NEXT</button>
@@ -394,6 +389,7 @@ const CarDetails = () => {
 
 
                 </div>
+                {/* <SlideImage/> */}
 
             </div >
             {/* <Footer /> */}

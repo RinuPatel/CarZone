@@ -201,26 +201,33 @@ ul {
 @media only screen and (min-width:0px) and (max-width:500px) {
     .BuyAndSellTabDesktop__buyAndSellTabDesktopContainer .BuyAndSellTabDesktop__tab {
         margin-left: 5rem;
-
-    }
-    .BuyCarTabDesktop__BuyCarTabDesktop .BuyCarTabDesktop__browseCarCta {
-        align-items: center;
-        display: block;
-        justify-content: space-between;
-        margin: 40px auto auto;
-        padding-inline: 44px;
-        padding-bottom: 32px;
     }
 
-    .BuyCarTabDesktop__BuyCarTabDesktop .BuyCarTabDesktop__benefits li>div .BuyCarTabDesktop__iconContainer {
-        align-items: center;
-        display: table-caption;
-
+    .BuyCarTabDesktop__BuyCarTabDesktop .BuyCarTabDesktop__benefits {
+        display: initial;
+        position: relative;
     }
 
-    .BuyCarTabDesktop__BuyCarTabDesktop .BuyCarTabDesktop__benefits li>div .BuyCarTabDesktop__content {
 
-        display: block;
-
+    .BuyCarTabDesktop__BuyCarTabDesktop {
+        width: 25rem;
     }
+
+}
+@media screen and (min-width:500px) and (max-width:900px) {
+
+    .BuyAndSellTabDesktop__buyAndSellTabDesktopContainer .BuyAndSellTabDesktop__tab {
+        margin-left: 20rem;
+    }
+
+    .BuyCarTabDesktop__BuyCarTabDesktop .BuyCarTabDesktop__benefits {
+        display: flex;
+        position: relative;
+    }
+
+
+    .BuyCarTabDesktop__BuyCarTabDesktop {
+        width: 35rem;
+    }
+
 }

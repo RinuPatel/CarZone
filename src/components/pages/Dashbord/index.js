@@ -21,7 +21,6 @@ export default function Dashbord() {
       <About/>
       <RentAndBuyCar/>
       <PickCar/>
-      {/* <Footer /> */}
       <Service/>
       <Footer2/>
     </>

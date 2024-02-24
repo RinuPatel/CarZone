@@ -5,7 +5,7 @@ function PageLoader() {
     <div> 
 
   
-        <img src="all image/loader.gif" alt="not found" style={{width:"112%",marginLeft:"-2rem",marginBottom:"-10rem",overflowX:"hidden"}}/>
+        <img src="all image/loader.gif" alt="not found" style={{width:"118%",marginLeft:"-2rem",marginBottom:"-10rem",overflowX:"hidden"}}/>
     </div>
   
   )

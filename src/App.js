@@ -23,9 +23,8 @@ import Tata from './components/pages/GelleryImage/Tata'
 import Toyota from './components/pages/GelleryImage/Toyota';
 import RentAndBuyCar from './components/pages/Dashbord/Rent&Buy';
 import Contact from './components/pages/Contact'
-// import BookCar from './components/pages/BookCar';
-// import BookCar from './components/BookCar';
-// import '../src/dist/styles.css'
+import Team from './components/pages/Team';
+import FAQ from './components/pages/FAQ';
 
 
 
@@ -35,7 +34,6 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        {/* <Route path='/buyAndSale' element={<RentAndBuyCar/>}/> */}
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Dashbord />} />
         <Route path="/cars-list" element={<CarsList />} />
@@ -43,7 +41,7 @@ function App() {
         <Route path="/car-details" element={<CarDetails />}  />
         <Route path="/car-booking-status" element={<CarBoking />} />
         <Route path="/booking-confiem" element={<BookingConfiem/>}/>
-        <Route path="/cantact-us" element={<ContactUs/>}/>
+        <Route path="/contact-us" element={<ContactUs/>}/>
         <Route path="/contact" element={<Contact/>} />
         <Route path="/my-account" element={<MyAccount/>}/>
         <Route path="/update-password" element={<Updatepassword/>}/>
@@ -51,8 +49,8 @@ function App() {
         <Route path="/server-error" element={<ServerError/>}/>
         <Route path="/page-loader" element={<PageLoader/>}/>
         <Route path="/gallery" element={<Gallery/>}/>
-        {/* <Route path='/car-book' element={<BookCar/>}/> */}
-        {/* <Route path='/book-car' element={<BookCar/>}/> */}
+        <Route path="/team" element={<Team/>}/>
+        <Route path="/faq" element={<FAQ/>}/>
 
       <Route path="/all" element={<All/>}/>
       <Route path='/honda' element={<Honda/>}/>

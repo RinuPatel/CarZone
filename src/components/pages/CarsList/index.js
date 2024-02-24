@@ -8,6 +8,7 @@ import CustomCheckBox from '../../Element/CustomCheckBox';
 import { useNavigate } from 'react-router';
 import { isBefore, isAfter } from 'date-fns';
 import DateDiffrent from '../../DateDiffrent';
+import { Slide } from 'react-slideshow-image';
 
 const CarsList = (props) => {
     const Navigate = useNavigate()
@@ -68,8 +69,8 @@ const CarsList = (props) => {
                 const data = await FetchApi('display-carlist', "", {
                     method: "GET",
                 })
-                console.log("my data ", data);
                 setCarItems(data)
+                console.log("my data ", data);
             } else {
                 const data = await FetchApi('display-carlist?city=' + myQuery, "", {
                     method: "GET",
@@ -156,7 +157,7 @@ const CarsList = (props) => {
             })
 
             // setCarItems(data)
-            console.log("my res",data);
+            console.log("my res", data);
         }
     };
 
@@ -170,7 +171,7 @@ const CarsList = (props) => {
 
     return (
         <>
-            <div className="background-image  d-flex ">
+            <div className="container background-image  d-flex ">
                 <div className='my-list ' >
                     {
                         carItems && carItems.length > 0 ?
@@ -277,6 +278,9 @@ const CarsList = (props) => {
 
                                         </div>
                                     </div>
+                                    {/* <SlideImage/> */}
+                                  
+                                 
                                 </div>
                             ) :
                             (

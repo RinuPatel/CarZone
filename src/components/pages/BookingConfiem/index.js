@@ -13,7 +13,7 @@ const BookingConfiem = () => {
     const DOMAIN = AppConfig.SUB_DOMAIN
     const handleCheckboxChange = () => {
         setIsChecked((prevChecked) => !prevChecked);
-        console.log("my check",isChecked)
+        console.log("my check", isChecked)
     };
 
 
@@ -30,12 +30,12 @@ const BookingConfiem = () => {
                     method: "POST"
                 })
                 console.log("my booking data", myBooking);
-                if(data.status === 200){
-                    
+                if (data.status === 200) {
+
                     setShowSuccess(true)
                     setTimeout(() => {
                         setShowSuccess(false)
-                       window.location.href = DOMAIN+"car-booking-status";
+                        window.location.href = DOMAIN + "car-booking-status";
                     }, 2000);
                 }
             }
@@ -64,7 +64,7 @@ const BookingConfiem = () => {
                                 <div className='add-del'>
                                     {/* <div className='contant' style={{ display: "inline-flex" }}> */}
                                     <p className='pragraph'> PICKUP/TIME</p>
-                                    <label htmlFor="" className='mx-3'>{myBooking.from}</label> 
+                                    <label htmlFor="" className='mx-3'>{myBooking.from}</label>
                                     <label htmlFor="" className='mx-3'>{myBooking.time}</label>
                                     {/* {'\n'}
                                 <p className='pragraph'>DEPART</p>
@@ -74,18 +74,18 @@ const BookingConfiem = () => {
                                 <div className='pay-del'>
                                     <h5>{myBooking.package}</h5>
 
-                                    <h3><i>₹</i>{myBooking.totalPrice}</h3>
+                                    <h3><i>₹ </i>{myBooking.totalPrice}</h3>
                                     <h6> BASE FARE</h6>
                                     <p>includes {myBooking.package}</p>
                                     <div className='addtional'>
                                         <div className='info'>
-                                            <h2>₹12</h2>
-                                            <h2>Additional Km </h2>
-                                            <h2>Fare After first 10 Km</h2>
+                                            <h2>₹ 30</h2>
+                                            <h2>Additional time </h2>
+                                            <h2>Fare After 10 km </h2>
                                         </div>
                                         <p></p>
                                         <div className='info1'>
-                                            <h2>₹2/min</h2>
+                                            <h2>₹ 10/hour</h2>
 
                                             <h2>Additional Ride Time Fare </h2>
                                             <h2>After first 1 hours</h2>
@@ -98,9 +98,9 @@ const BookingConfiem = () => {
                                     <div className='notes'>
 
                                         <div>
-                                            <p>Rental can be used for local travels only, package cannot be changed after booking is confirmed.</p>
-                                            <p>For usage beyond selected package,additional fare will be application as per rates rates above.</p>
-                                            <p>Base fare amount is the minimum bill amount a customer has to pay for the package.</p>
+                                            <p>Rental can be used for local travels. If you want extra time then additional change can be add.</p>
+                                            <p>For usage beyond selected time, fare will be application as per rates rates above.</p>
+                                            <p>Payment for the rental must be made in half at the time of booking or upon pick-up of the vehicle.</p>
                                         </div>
                                         <div style={{ margin: "0.3rem" }}>
 

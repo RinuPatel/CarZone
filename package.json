@@ -24,7 +24,9 @@
     "react-router": "^6.14.0",
     "react-router-dom": "^6.14.0",
     "react-scripts": "5.0.1",
+    "react-slideshow-image": "^4.3.0",
     "react-time-picker": "^6.5.0",
+    "react-timeit": "^1.2.12",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

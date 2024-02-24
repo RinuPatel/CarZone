@@ -1,16 +1,16 @@
-.main .about{
+.about{
     /* padding: 4rem; */
     background-image: url('../../../../../public/image/about/about.jpeg');
     background-size: cover;
-    margin-right: 50px;
-    margin-left: 50px;
+    /* margin-right: 50px; */
+    /* margin-left: 50px; */
     height: 600px;
-    margin-top: 10rem;
+    margin-top: 3rem;
 
 
 }
 
-.main .about button{
+.container .about button{
     background-color: red;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -24,18 +24,16 @@
     border-radius: 3px;
 }
 
-.main .about button:hover{
+.container .about button:hover{
     background-color: rgb(15, 15, 61);
 } 
-
+/* 
 @media screen and (max-width:800px) {
-    .main .about{
-        /* padding: 4rem; */
+    .container .about{
         background-image: url('../../../../../public/image/about/about.jpeg');
         background-size: cover;
-        /* width: 20rem; */
         
     
     }
     
-}
+} */

@@ -91,8 +91,8 @@ const Header = () => {
 
                 <div className="container">
                     <Link to="/" className="navbar-brand title-bar" >
-                        {/* <img src="icons/logo.jpeg" alt="" style={{ width: "100px" }} className="img-icon" /> */}
-                        WheelsHub
+                        <img src="icons/logo2.jpeg" alt="" style={{ width: "105px",marginLeft:"1rem" }} className="img-icon" />
+                        {/* WheelsHub */}
                     </Link>
                     <button
                         className="navbar-toggler"
@@ -128,18 +128,18 @@ const Header = () => {
                                 <Link to="/gallery" className="nav-link text-white">Gallary</Link>
 
                             </li>
-                            <li className={isLinkActive('/cantact-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
-                                <Link to="/cantact-us" className="nav-link text-white">Team</Link>
+                            <li className={isLinkActive('/team') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
+                                <Link to="/team" className="nav-link text-white">Team</Link>
                             </li>
-                            <li className={isLinkActive('/cantact-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
-                                <Link to="/cantact-us" className="nav-link text-white">FAQ</Link>
+                            <li className={isLinkActive('/faq') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
+                                <Link to="/faq" className="nav-link text-white">FAQ</Link>
                             </li>
 
                             <li className={isLinkActive('/about-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
                                 <Link to="/about-us" className="nav-link text-white">About</Link>
                             </li>
-                            <li className={isLinkActive('/cantact-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
-                                <Link to="/cantact-us" className="nav-link text-white">Contact Us</Link>
+                            <li className={isLinkActive('/contact-us') ? 'active' : ''} style={{ paddingLeft: "1rem" }}>
+                                <Link to="/contact-us" className="nav-link text-white">Contact Us</Link>
                             </li>
 
 

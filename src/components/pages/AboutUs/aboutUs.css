@@ -122,3 +122,112 @@
     }
 
 }
+
+
+
+
+
+.about-main {
+    margin: 50px;
+    margin-left: 5rem;
+    display: flex;
+    gap: 2rem;
+    max-width: 70rem;
+    align-items: center;
+  }
+  @media (max-width: 960px) {
+    .about-main {
+      display: grid;
+      grid-template-columns: 1fr;
+      text-align: center;
+      max-width: 49rem;
+    }
+  }
+  @media (max-width: 520px) {
+    .about-main {
+      max-width: 100%;
+    }
+  }
+  /* .about-main__img {
+    width: 43rem;
+    height: 43rem;
+  } */
+  @media (max-width: 960px) {
+    .about-main__img {
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 520px) {
+    .about-main__img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .about-main__text {
+    color: #010103;
+    display: flex;
+    flex-direction: column;
+  }
+  .about-main__text h3 {
+    font-size: 2.2rem;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .about-main__text h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+  .about-main__text p {
+    font-size: 1rem;
+    color: #706f7b;
+    font-family: "Rubik", sans-serif;
+    line-height: 1.5;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  .about-main__text__icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+  }
+  @media (max-width: 520px) {
+    .about-main__text__icons {
+      grid-template-columns: 1fr;
+      margin: 0 auto;
+      gap: 0;
+    }
+    .about-main__text__icons p {
+      margin-top: 0;
+    }
+  }
+  .about-main__text__icons__box {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 520px) {
+    .about-main__text__icons__box {
+      align-items: center;
+    }
+  }
+  .about-main__text__icons__box .last-fk {
+    width: 5rem;
+  }
+  .about-main__text__icons__box img {
+    width: 7rem;
+  }
+  .about-main__text__icons__box span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  @media (max-width: 520px) {
+    .about-main__text__icons__box span {
+      text-align: center;
+      flex-direction: column;
+    }
+  }
+  .about-main__text__icons__box span h4 {
+    font-size: 4.6rem;
+  }
+  

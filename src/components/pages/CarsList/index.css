@@ -189,3 +189,9 @@
         text-align: center;
     }
 }
+@media (min-width:1366px) and (max-width:1500px) {
+    .car-fram {
+        width: 22rem;
+        
+    }
+}

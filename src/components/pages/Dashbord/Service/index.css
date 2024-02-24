@@ -21,7 +21,7 @@
     width: 130%;
    }
    
-   .col-sm-2 {
+   .col-md-2 {
       display: flex;
      
       padding-right: 30px;
@@ -35,11 +35,11 @@
    
    }
    
-   .main .service .container .row .col-sm-2 .txt{
+   .main .service .container .row .col-md-2 .txt{
        padding-left: 10px;
        padding-right: 5px;
    }
-   .main .service .container .row .col-sm-2 .icon1{
+   .main .service .container .row .col-md-2 .icon1{
        width:  190px;
        /* width: 50rem; */
        height: 30px;
@@ -49,7 +49,7 @@
        
    }
    
-   .main .service .container .row .col-sm-2 .icon2{
+   .main .service .container .row .col-md-2 .icon2{
        width:  160px;
        height: 30px;
        background-image: url('../../../../../public/icons/like.png');
@@ -58,7 +58,7 @@
        
    }
    
-   .main .service .container .row .col-sm-2 .icon3{
+   .main .service .container .row .col-md-2 .icon3{
        width:  160px;
        height: 30px;
        background-image: url('../../../../../public/icons/cal.png');
@@ -66,7 +66,7 @@
        background-color: red;
        
    }
-   .main .service .container .row .col-sm-2 .icon4{
+   .main .service .container .row .col-md-2 .icon4{
        width:  160px;
        height: 30px;
        background-image: url('../../../../../public/icons/star.png');

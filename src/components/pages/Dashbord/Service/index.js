@@ -12,7 +12,7 @@ export default function Service() {
                 <div className="container">
                     <div className="row">
 
-                        <div class="col-sm-2">
+                        <div class="col-md-2">
                             <div className="txt">
                                 <h4>Variety Of Cars</h4>
                                 <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Possimus Assumenda Dolores Odit</p>
@@ -22,7 +22,7 @@ export default function Service() {
 
                         </div>
                         {/* ******************* second icon ***************** */}
-                        <div class="col-sm-2">
+                        <div class="col-md-2">
                             <div className="txt">
                                 <h4>Best Quality Of Cars</h4>
                                 <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Possimus Assumenda Dolores Odit</p>
@@ -32,7 +32,7 @@ export default function Service() {
                         </div>
 
                         {/* ************************* third icon ****************** */}
-                        <div class="col-sm-2">
+                        <div class="col-md-2">
                             <div className="txt">
                                 <h4>Reservation Anytime</h4>
                                 <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Possimus Assumenda Dolores Odit</p>
@@ -42,7 +42,7 @@ export default function Service() {
                         </div>
 
                         {/* ******************** fourth icon ************************* */}
-                        <div class="col-sm-2">
+                        <div class="col-md-2">
 
                             <div className="txt">
                                 <h4>Best Price guarantee</h4>

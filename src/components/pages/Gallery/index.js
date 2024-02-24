@@ -9,10 +9,11 @@ export default function Gallery() {
             <div className="gallery">
 
                 <div className="bgImage">
-                    <ul> 
+                    <ul>
                         <h2>Gallary</h2>
-                        <Link to="/">Home </Link> <Link to="/Gallery">/Gallery</Link></ul>
-                 
+                        <Link to="/">Home </Link> <Link to="/Gallery">/Gallery</Link>
+                    </ul>
+
 
                 </div>
                 <div className="header">
