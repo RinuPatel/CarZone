@@ -11,13 +11,16 @@
 .main-text {
     color: rgb(8, 8, 8);
     margin-left: 16rem;
-
+    width: 65rem;
 }
 
 .img-car {
     width: 3rem;
     border-radius: 2rem;
-    margin: 1rem;
+    /* margin: 1rem; */
+}
+.theam{
+    background-color: rgb(200, 93, 93);
 }
 
 .icon-loc {
@@ -145,7 +148,12 @@
     margin-left: 16rem;
     font-weight: bolder;
 }
-
+.status-pro{
+    margin-left: 1rem;
+    padding: 0.8rem;
+    color: rgb(235, 81, 21);
+    border-radius: 0.1rem;
+}
 
 
 @media (max-width:500px) {

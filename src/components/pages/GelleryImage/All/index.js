@@ -6,7 +6,7 @@ export default function All(){
         <div className="All">
 
         <div className="header">
-        <Gallery/>
+        {/* <Gallery/> */}
         </div>
 
         <div className="images"> 

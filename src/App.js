@@ -52,7 +52,7 @@ function App() {
         <Route path="/team" element={<Team/>}/>
         <Route path="/faq" element={<FAQ/>}/>
 
-      <Route path="/all" element={<All/>}/>
+      <Route path="/gallery" element={<All/>}/>
       <Route path='/honda' element={<Honda/>}/>
       <Route path='/MarutiSuzuki' element={<MarutiSuzuki/>}/>
       <Route path="/Mahindra" element={<Mahindra/>}/>

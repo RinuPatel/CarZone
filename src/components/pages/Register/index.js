@@ -47,6 +47,7 @@ const Register = () => {
                 const data = await FetchApi("user-register", formUserData, {
                     method: "POST",
                     headers: "application/json"
+                    // isForm:true
                 })
                 console.log("my form data", data)
                 Cookies.set('jwt', data.token, { expires: 1 })
@@ -63,11 +64,7 @@ const Register = () => {
                         setShowSuccessPopup(false);
                         window.location.href = DOMAIN + "login";
                     }, 1500);
-                    // setUname("")
-                    // setEmail("")
-                    // setPass("")
-                    // setConfirmpass("")
-                    // setGender("")
+                   
                 }
 
             }

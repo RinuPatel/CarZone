@@ -237,6 +237,7 @@ const CarsList = (props) => {
                                                         {carItems.map((items, index) =>
 
                                                         (
+                                                            items.onStatus !== "Offline" &&(
                                                             <>
                                                                 <div className={`mx-3  my-2 car-fram `} id="car-fram" >
                                                                     <div >
@@ -268,6 +269,7 @@ const CarsList = (props) => {
                                                                     </div>
                                                                 </div>
                                                             </>
+                                                            )
                                                         ))}
 
                                                     </div>
