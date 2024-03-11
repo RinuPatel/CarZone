@@ -88,6 +88,12 @@ const CarsList = (props) => {
         window.location.href = MY_DOMAIN + "car-details?item_key=" + id;
         // Navigate(MY_DOMAIN + "car-details?item_key=" + id)
     }
+    const handlerCarDetailWithShare = (id, share) => {
+        // console.log("my car is here", id)
+        window.location = window.location.href.split('?')[0] + "?q=" + id;
+        window.location.href = MY_DOMAIN + "car-details?item_key=" + id + "&share_car=" + share;
+        // Navigate(MY_DOMAIN + "car-details?item_key=" + id)
+    }
     const handlerCarCategary = async (myQuery) => {
         if (myQuery) {
             const data = await FetchApi('display-carlist?car_categary=' + myQuery, "", {
@@ -183,8 +189,8 @@ const CarsList = (props) => {
                                         <button className='categary-type mx-2' value="BMW" onClick={(e) => { handlerCarCategary(e.target.value) }}>BMW </button>
                                         <button className='categary-type mx-2' value="Honda" onClick={(e) => { handlerCarCategary(e.target.value) }}>Honda</button>
                                         <button className='categary-type mx-2' value="Maruti" onClick={(e) => { handlerCarCategary(e.target.value) }}>Maruti</button>
-                                        <button className='categary-type mx-2' value="Mercedes" onClick={(e) => { handlerCarCategary(e.target.value) }}>Luxury</button>
-                                        <button className='categary-type mx-2' value="Mercedes" onClick={(e) => { handlerCarCategary(e.target.value) }}>Luxury</button>
+                                        <button className='categary-type mx-2' value="Hyundai" onClick={(e) => { handlerCarCategary(e.target.value) }}>Hyundai</button>
+                                        <button className='categary-type mx-2' value="Mahindra" onClick={(e) => { handlerCarCategary(e.target.value) }}>Mahindra</button>
                                     </div>
                                     <hr />
                                     <div className='mainContaineInCar'>
@@ -237,38 +243,43 @@ const CarsList = (props) => {
                                                         {carItems.map((items, index) =>
 
                                                         (
-                                                            items.onStatus !== "Offline" &&(
-                                                            <>
-                                                                <div className={`mx-3  my-2 car-fram `} id="car-fram" >
-                                                                    <div >
+                                                            items.onStatus !== "Offline" && (
+                                                                <>
+                                                                    <div className={`mx-3  my-2 car-fram `} id="car-fram" >
+                                                                        <div >
 
-                                                                        < img src={AppConfig.BASE_URL + "carImage/" + items.image[0]} className="card-img-top" alt="..." />
-                                                                        <p >{items.carName}</p>
-                                                                        <div className='item-title'>
-                                                                            <div className=''>
-                                                                                <p>Exterior: {items.exteriorColor}</p>
-                                                                                <p>Interior : {items.interiorColor}</p>
+                                                                            < img src={AppConfig.BASE_URL + "carImage/" + items.image[0]} className="card-img-top" alt="..." />
+                                                                            <p >{items.carName}</p>
+                                                                            <div className='item-title'>
+                                                                                <div className=''>
+                                                                                    <p>Exterior: {items.exteriorColor}</p>
+                                                                                    <p>Interior : {items.interiorColor}</p>
+                                                                                </div>
+                                                                                <div style={{ marginLeft: "0.1rem" }}>
+                                                                                    <p>Seats: {items.seats}</p>
+                                                                                    <p >City : {items.city}</p>
+                                                                                </div>
                                                                             </div>
-                                                                            <div style={{ marginLeft: "0.1rem" }}>
-                                                                                <p>Seats: {items.seats}</p>
-                                                                                <p >City : {items.city}</p>
-                                                                            </div>
+                                                                            <p style={{ fontWeight: "bold" }}>Per Day Rate:  {items.schedule}₹</p>
+                                                                            {items.isBooked ? (
+                                                                                <>
+
+                                                                                    <p className='isBooked'>Booked Slot</p>
+                                                                                    <p className='isBooked'>Available on  {items.onAvailble.days} day {items.onAvailble.hours} hours </p>
+
+                                                                                </>
+                                                                            ) :
+                                                                                <>
+                                                                                    <div style={{ display: "flex" }} className=''>
+
+                                                                                        <CustomButton onClick={(e) => { handlerCarDetailWithShare(items._id,"Yes") }} > Rent With Share</CustomButton>
+                                                                                        <CustomButton onClick={(e) => { handlerOneCarDetails(items._id) }} > Rent It</CustomButton>
+                                                                                    </div>
+                                                                                </>
+                                                                            }
                                                                         </div>
-                                                                        <p style={{ fontWeight: "bold" }}>Per Day Rate:  {items.schedule}₹</p>
-                                                                        {items.isBooked ? (
-                                                                            <>
-
-                                                                                <p className='isBooked'>Booked Slot</p>
-                                                                                <p className='isBooked'>Available on  {items.onAvailble.days} day {items.onAvailble.hours} hours </p>
-
-                                                                            </>
-                                                                        ) :
-
-                                                                            <CustomButton onClick={(e) => { handlerOneCarDetails(items._id) }} > Rent It</CustomButton>
-                                                                        }
                                                                     </div>
-                                                                </div>
-                                                            </>
+                                                                </>
                                                             )
                                                         ))}
 
@@ -281,8 +292,8 @@ const CarsList = (props) => {
                                         </div>
                                     </div>
                                     {/* <SlideImage/> */}
-                                  
-                                 
+
+
                                 </div>
                             ) :
                             (

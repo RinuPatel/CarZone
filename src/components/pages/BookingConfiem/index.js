@@ -77,7 +77,7 @@ const BookingConfiem = () => {
                                     <h3><i>₹ </i>{myBooking.totalPrice}</h3>
                                     <h6> BASE FARE</h6>
                                     <p>includes {myBooking.package}</p>
-                                    <div className='addtional'>
+                                    {/* <div className='addtional'>
                                         <div className='info'>
                                             <h2>₹ 30</h2>
                                             <h2>Additional time </h2>
@@ -90,17 +90,21 @@ const BookingConfiem = () => {
                                             <h2>Additional Ride Time Fare </h2>
                                             <h2>After first 1 hours</h2>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                 </div>
                                 <div className='show-del'>
                                     <button>See teams and Conditions</button>
                                     <div className='notes'>
 
-                                        <div>
+                                        <div className='teams_condition'> 
                                             <p>Rental can be used for local travels. If you want extra time then additional change can be add.</p>
                                             <p>For usage beyond selected time, fare will be application as per rates rates above.</p>
                                             <p>Payment for the rental must be made in half at the time of booking or upon pick-up of the vehicle.</p>
+
+                                            <p>If you book with share fare the booking payment can be distributed if passengers meet en route.</p>
+                                            <p>When you are booked car with share any case passangers can not meet then you will pay define hire.</p>
+
                                         </div>
                                         <div style={{ margin: "0.3rem" }}>
 
@@ -119,7 +123,7 @@ const BookingConfiem = () => {
                                     </div>
                                 </div>
                                 <div className='book'>
-                                    No advance payment required for booking
+                              Payment can be only Cash 
                                 </div>
                                 <div className='cashPay'>
                                     <h5>PAY BY</h5>

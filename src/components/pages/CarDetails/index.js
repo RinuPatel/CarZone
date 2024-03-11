@@ -35,6 +35,8 @@ const CarDetails = () => {
     var url_string = window.location;// it is get current page url
     var url = new URL(url_string);
     var myCarKey = url.searchParams.get("item_key");
+    var shareRent = url.searchParams.get("share_car")
+    console.log("mycar key ==>",shareRent);
     const handlerDisplayOneCarDetails = async () => {
         if (myCarKey) {
             const data = await FetchApi("/display-carlist?item_id=" + myCarKey, "", {
@@ -129,7 +131,8 @@ const CarDetails = () => {
                         vehicalNo: myCarDetails.vehicalNo,
                         bookId: myCarKey,
                         pickupTime: pickupTime,
-                        dropTime: dropupTime
+                        dropTime: dropupTime,
+                        shareRent:shareRent
                     }
                     console.log("object data =>", carBookingDetails);
                     if (carBookingDetails) {
