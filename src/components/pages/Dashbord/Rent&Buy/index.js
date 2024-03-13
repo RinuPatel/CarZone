@@ -15,13 +15,13 @@ export default function RentAndBuyCar() {
   return (
     <>
       <div className='BuyAndSellTabDesktop__buyAndSellTabDesktopContainer'>
-        <div className='BuyAndSellTabDesktop__tab'>
+        {/* <div className='BuyAndSellTabDesktop__tab'>
           <button className={!contectShow ? 'active' : "BuyAndSellTabDesktop"} onClick={handlerclickButton}>Buy Budget Car</button>
           <button className={contectShow ? 'active ' : "BuyAndSellTabDesktop"} onClick={handlerclickButton}>Rent Car</button>
           <div className='BuyAndSellTabDesktop__tabIndicator' style={{ transform: " translateX(0%)", left: "6px" }} >
 
           </div>
-        </div>
+        </div> */}
         {!contectShow ?
           <div className='BuyAndSellTabDesktop__buySellTab w3-container w3-center  w3-animate-left'>
             <div className='BuyAndSellTabDesktop__buySellTab' style={{ left: "0px" }}>

@@ -1,5 +1,5 @@
 .main-div {
-    background-image: url("/home/rp/Documents/minorProject/user/public/lgcar1.jpeg");
+    background-image: url("../../../../public/lgcar1.jpeg");
     /* background-color: rgb(243, 234, 234); */
     height: 100vh;
     background-repeat: no-repeat;

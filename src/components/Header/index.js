@@ -59,27 +59,29 @@ const Header = () => {
     // }, []);
 
     const handlerLogOutUser = async () => {
-        if (cookieValue) {
+        console.log("logout")
+        // if (cookieValue) {
             const userLogOut = await FetchApi("user-logout", "", {
                 method: "GET",
-                headers: {
-                    "token": cookieValue
-                }
+                // headers: {
+                //     "token": cookieValue
+                // }
             })
+            console.log("logout===>",userLogOut);
             if (userLogOut.status === 200) {
                 setIstoken(false)
                 Cookies.remove("LTK");
                 window.location.href = DOMAIN + "login";
             }
             console.log("my logOut data", userLogOut.status)
-        }
+        // }
 
     }
 
     const location = useLocation();
 
     // Function to determine if a link is active
-    console.log("my path ", location);
+    // console.log("my path ", location);
     const isLinkActive = (path) => {
         return location.pathname === path;
     };
@@ -91,7 +93,7 @@ const Header = () => {
 
                 <div className="container">
                     <Link to="/" className="navbar-brand title-bar" >
-                        <img src="icons/logo2.jpeg" alt="" style={{ width: "105px",marginLeft:"1rem" }} className="img-icon" />
+                        <img src="icons/logo4.jpeg" alt="" style={{ width: "200px",marginLeft:"1rem" }} className="img-icon" />
                         {/* WheelsHub */}
                     </Link>
                     <button

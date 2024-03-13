@@ -48,11 +48,11 @@ function App() {
         <Route path="/about-us" element={<AboutUs/>}/>
         <Route path="/server-error" element={<ServerError/>}/>
         <Route path="/page-loader" element={<PageLoader/>}/>
-        <Route path="/gallery" element={<Gallery/>}/>
+        <Route path="/gallery" element={<All/>}/>
         <Route path="/team" element={<Team/>}/>
         <Route path="/faq" element={<FAQ/>}/>
 
-      <Route path="/gallery" element={<All/>}/>
+      <Route path="/all" element={<All/>}/>
       <Route path='/honda' element={<Honda/>}/>
       <Route path='/MarutiSuzuki' element={<MarutiSuzuki/>}/>
       <Route path="/Mahindra" element={<Mahindra/>}/>

@@ -75,8 +75,9 @@ const CarsList = (props) => {
                 const data = await FetchApi('display-carlist?city=' + myQuery, "", {
                     method: "GET",
                 })
-                // console.log("my data ", data);
+                ``
                 setCarItems(data)
+                // console.log("my data ", data);
             }
         } catch (error) {
             console.log("some error occur..!", error)
@@ -143,6 +144,21 @@ const CarsList = (props) => {
     }
     const [permissions, setPermissions] = useState([]);
 
+    const handleCityFilter = async () => {
+        const { value, checked } = this.target;
+        let { citys } = checkedCities;
+
+        // citys.map((item, index) => {
+        //     if(item.title ===value){
+        //         citys[index].is_checked=checked
+        //     }
+        // });
+        // console.log("My cities ====>", citys);
+    }
+
+    const handleSeatsFilter = async () => {
+
+    }
 
     const handleCheck = async (event) => {
         var permissions_array = [...permissions];
@@ -203,7 +219,7 @@ const CarsList = (props) => {
                                                             <div key={index}>
 
                                                                 <CustomCheckBox
-
+                                                                    onChange={handleSeatsFilter}
                                                                 >
                                                                     {item.title}
                                                                 </CustomCheckBox>
@@ -227,7 +243,8 @@ const CarsList = (props) => {
                                                                 >{item.title}</CustomCheckBox> */}
                                                                 <CustomCheckBox
                                                                     value={item.title}
-                                                                    onChange={handleCheck}
+                                                                    onChange={handleCityFilter}
+                                                                // onChange={handleCheck}
                                                                 >{item.title}</CustomCheckBox>
                                                             </div>
                                                         )
@@ -272,7 +289,7 @@ const CarsList = (props) => {
                                                                                 <>
                                                                                     <div style={{ display: "flex" }} className=''>
 
-                                                                                        <CustomButton onClick={(e) => { handlerCarDetailWithShare(items._id,"Yes") }} > Rent With Share</CustomButton>
+                                                                                        <CustomButton onClick={(e) => { handlerCarDetailWithShare(items._id, "Yes") }} > Rent With Share</CustomButton>
                                                                                         <CustomButton onClick={(e) => { handlerOneCarDetails(items._id) }} > Rent It</CustomButton>
                                                                                     </div>
                                                                                 </>

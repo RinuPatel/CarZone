@@ -20,7 +20,7 @@ export default function Gallery() {
                 </div>
                 <div className="header">
                     <ul>
-                        <Link to="/">All</Link>
+                        <Link to="/all">All</Link>
                         <Link to="/MarutiSuzuki">Maruti Suzuki</Link>
                         <Link to="/honda">Honda</Link>
                         <Link to="/Mahindra">Mahindra</Link>

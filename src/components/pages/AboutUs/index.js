@@ -75,22 +75,22 @@ const AboutUs = () => {
                                     <div className="about-main__text__icons__box">
                                         <img src={Box1} alt="car-icon" />
                                         <span>
-                                            <h4>20</h4>
+                                            <h4>20+</h4>
                                             <p>Car Types</p>
                                         </span>
                                     </div>
                                     <div className="about-main__text__icons__box">
                                         <img src={Box2} alt="car-icon" />
                                         <span>
-                                            <h4>85</h4>
-                                            <p>Rental Outlets</p>
+                                            <h4>85+</h4>
+                                            <p>Rental Drivers</p>
                                         </span>
                                     </div>
                                     <div className="about-main__text__icons__box">
                                         <img src={Box3} alt="car-icon" className="last-fk" />
                                         <span>
-                                            <h4>75</h4>
-                                            <p>Repair Shop</p>
+                                            <h4>75+</h4>
+                                            <p>Daily Booking</p>
                                         </span>
                                     </div>
                                 </div>

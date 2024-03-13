@@ -32,7 +32,7 @@ export default function TopBennar() {
             <div className="banner-image w-100 vh-100 d-flex justify-content-left align-items-center" >
                 <div className='justify-content-left align-items-center display-content' id='display'>
                     <div className="text-left" id='text-head'>
-                        <p className='text-white text-head' id='header-dashbord'>Find Right Choise Cars For Rent And Buy</p>
+                        <p className='text-white text-head' id='header-dashbord'>Find Right Choise Cars For Rent A At Low Prices</p>
                         {/* <h4 className='text-white text-mini' id='title-dashbord'>Fast & Easy Way To Rent A Car</h4> */}
                         <h5 className='text-white text-third'  >Ready to hit the road? Browse our fleet and book <br />your perfect car today.</h5>
                     </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import '../PickCar/index.css'
+import { Link } from "react-router-dom";
 
 function CarBox({ data, carID }) {
   const [carLoad, setCarLoad] = useState(true);
@@ -59,9 +60,9 @@ function CarBox({ data, carID }) {
               </div>
             </div>
             {/* btn cta */}
-            <a className="cta-btn" href="#booking-section">
+            <Link className="cta-btn" to="/cars-list">
               Reserve Now
-            </a>
+            </Link>
           </div>
         </div>
       ))}
