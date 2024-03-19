@@ -22,7 +22,7 @@ export default function RentAndBuyCar() {
 
           </div>
         </div> */}
-        {!contectShow ?
+        {contectShow ?
           <div className='BuyAndSellTabDesktop__buySellTab w3-container w3-center  w3-animate-left'>
             <div className='BuyAndSellTabDesktop__buySellTab' style={{ left: "0px" }}>
               <div>
@@ -106,7 +106,7 @@ export default function RentAndBuyCar() {
                           <div className='BuyCarTabDesktop__content'>
                             <div className='BuyCarTabDesktop__heading'>
                               <strong>Fast Booking </strong>
-                              <p className='BuyCarTabDesktop__benefitDescription'> Every car is carefully handpicked after a thorough quality inspection.</p>
+                              <p className='BuyCarTabDesktop__benefitDescription'> Every car is fast booking no need to wait for booking time.</p>
                             </div>
                           </div>
                         </div>
@@ -120,7 +120,7 @@ export default function RentAndBuyCar() {
                           <div className='BuyCarTabDesktop__content'>
                             <div className='BuyCarTabDesktop__heading'>
                               <strong>Choose By Self</strong>
-                              <p className='BuyCarTabDesktop__benefitDescription'> Every car is carefully handpicked after a thorough quality inspection.</p>
+                              <p className='BuyCarTabDesktop__benefitDescription'> We are facilitate to choose car by self.You can book your favorite car.</p>
                             </div>
                           </div>
                         </div>
@@ -134,12 +134,12 @@ export default function RentAndBuyCar() {
                           <div className='BuyCarTabDesktop__content'>
                             <div className='BuyCarTabDesktop__heading'>
                               <strong>Access AnyWhere</strong>
-                              <p className='BuyCarTabDesktop__benefitDescription'> Every car is carefully handpicked after a thorough quality inspection.</p>
+                              <p className='BuyCarTabDesktop__benefitDescription'>You can book anytime any place.we are facilitate to access anywhere.</p>
                             </div>
                           </div>
                         </div>
                       </li>
-                      <li>
+                      <li> 
                         <div>
                           <div className='BuyCarTabDesktop__iconContainer'>
                             <img src="icons/confort3.png" alt="" className='buycarImage' />
@@ -148,7 +148,7 @@ export default function RentAndBuyCar() {
                           <div className='BuyCarTabDesktop__content'>
                             <div className='BuyCarTabDesktop__heading'>
                               <strong>Comfort</strong>
-                              <p className='BuyCarTabDesktop__benefitDescription'> Every car is carefully handpicked after a thorough quality inspection.</p>
+                              <p className='BuyCarTabDesktop__benefitDescription'>We are give full of comfort car and make your trip enjoyful.</p>
                             </div>
                           </div>
                         </div>

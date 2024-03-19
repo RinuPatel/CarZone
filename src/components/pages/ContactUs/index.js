@@ -115,7 +115,7 @@ const ContactUs = () => {
                 </ul>
             </div>
             <p style={{ textAlign: "center",marginTop:"2rem" }}>If you have any query related website or anything else, you can contact us via filling the contact us form.</p>
-            <div className='container contant_table' >
+            <div className='contant_table' >
                 <div class=' contant-main' >
                     {/* <center></center> */}
                     <div class="container">

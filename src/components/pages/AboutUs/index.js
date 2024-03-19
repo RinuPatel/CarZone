@@ -65,11 +65,9 @@ const AboutUs = () => {
                                 {/* <h3>About Company</h3> */}
                                 <h2>You start the engine and your adventure begins</h2>
                                 <p>
-                                    Certain but she but shyness why cottage. Guy the put instrument
-                                    sir entreaties affronting. Pretended exquisite see cordially the
-                                    you. Weeks quiet do vexed or whose. Motionless if no to
-                                    affronting imprudence no precaution. My indulged as disposal
-                                    strongly attended.
+                                    Welcome to WheelsHub we are committed  to providing you with the ultimate car rental experience.
+                                     Whether you're traveling for business or pleasure, our goal is to make your journey as smooth and
+                                      enjoyable as possible.
                                 </p>
                                 <div className="about-main__text__icons">
                                     <div className="about-main__text__icons__box">
@@ -99,7 +97,7 @@ const AboutUs = () => {
                         <PlanTrip />
                     </div>
                 </section>
-           
+
                 <Footer />
             </div>
         </>

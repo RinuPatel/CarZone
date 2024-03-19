@@ -5,7 +5,7 @@
 
 
 .footer .container1 i{
-    font-size: 25px;
+    font-size: 20px;
     width: 20px;
     transition: color .4s ease;
     color : white;
@@ -16,7 +16,7 @@
 .footer .container1 p{
     color: white;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    /* font-size: 18px; */
 }
 .footer{
     display: flex;
@@ -28,7 +28,7 @@
 }
 .footer .container1 h1{
     padding-left: 40px;
-    color: red;
+    color: rgb(25, 23, 23);
 }
 
 .footer .container1{
@@ -53,7 +53,7 @@
  .footer .container2 a{
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    /* font-size: 20px; */
 }
 .footer .container2 li{
     color: red;

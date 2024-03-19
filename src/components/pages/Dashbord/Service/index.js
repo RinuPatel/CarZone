@@ -15,7 +15,7 @@ export default function Service() {
                         <div class="col-md-2">
                             <div className="txt">
                                 <h4>Variety Of Cars</h4>
-                                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Possimus Assumenda Dolores Odit</p>
+                                <p>We provide a diverse range of cars to suit every lifestyle and preference.we have the perfect vehicle for you.</p>
 
                             </div>
                             <div className="icon1"></div>
@@ -25,7 +25,7 @@ export default function Service() {
                         <div class="col-md-2">
                             <div className="txt">
                                 <h4>Best Quality Of Cars</h4>
-                                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Possimus Assumenda Dolores Odit</p>
+                                <p>We are facilitate besquality of car. we are value your every trip.</p>
 
                             </div>
                             <div className="icon2"></div>
@@ -35,7 +35,7 @@ export default function Service() {
                         <div class="col-md-2">
                             <div className="txt">
                                 <h4>Reservation Anytime</h4>
-                                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Possimus Assumenda Dolores Odit</p>
+                                <p>You no need any location and any fix time you can book car anywhere anytime.</p>
 
                             </div>
                             <div className="icon3"></div>
@@ -46,7 +46,7 @@ export default function Service() {
 
                             <div className="txt">
                                 <h4>Best Price guarantee</h4>
-                                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Consequatur Possimus Assumenda Dolores Odit</p>
+                                <p>There is diffrant car and diffrent price.You can book car in your range. </p>
 
                             </div>
                             <div className="icon4"></div>

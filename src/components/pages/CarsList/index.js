@@ -3,25 +3,18 @@ import './index.css'
 import FetchApi from '../../../constants/FetchApi';
 import AppConfig from '../../../constants/AppConfig';
 import CustomButton from '../../Element/CustomButton';
-import ServerError from '../../Errors/ServerError';
 import CustomCheckBox from '../../Element/CustomCheckBox';
 import { useNavigate } from 'react-router';
-import { isBefore, isAfter } from 'date-fns';
-import DateDiffrent from '../../DateDiffrent';
-import { Slide } from 'react-slideshow-image';
 
+let selectedCityList = [];
+let selectedSeatsList = [];
 const CarsList = (props) => {
     const Navigate = useNavigate()
     const MY_DOMAIN = AppConfig.SUB_DOMAIN;
-    const [catearyName, setCatearyName] = useState()
     const [carItems, setCarItems] = useState([])
     const [isActive, setIsActive] = useState(false);
-    const [isChecked, setIsChecked] = useState(false);
 
-    const [carSeaterList, setCarSeaterlLst] = useState([
-        {
-            title: "4 Seats"
-        },
+    const carSeaterList = [
         {
             title: "5 Seats"
         },
@@ -29,13 +22,11 @@ const CarsList = (props) => {
             title: "6 Seats"
         },
         {
-            title: "6+ Seats"
+            title: "7 Seats"
         },
-        {
-            title: "All"
-        },
-    ])
-    const [cityFilter, setCityFilter] = useState([
+
+    ]
+    const cityFilter = [
         {
             title: "Surat"
         },
@@ -49,7 +40,7 @@ const CarsList = (props) => {
             title: "Ahemdabad"
         },
 
-    ])
+    ]
     // console.log("my city", cityFilter);
     const [timeDifference, setTimeDifference] = useState({
         days: 0,
@@ -62,22 +53,23 @@ const CarsList = (props) => {
     var url_string = window.location;// it is get current page url
     var url = new URL(url_string);
     var myQuery = url.searchParams.get("city");
-    // console.log("my query city here ==>", url);
+    console.log("my query city here ==>", myQuery);
     const handlerListOfCars = async () => {
         try {
             if (!myQuery) {
                 const data = await FetchApi('display-carlist', "", {
                     method: "GET",
                 })
-                setCarItems(data)
-                console.log("my data ", data);
+
+                    setCarItems(data)
+                    console.log("my data ====>", data);
             } else {
                 const data = await FetchApi('display-carlist?city=' + myQuery, "", {
                     method: "GET",
                 })
-                ``
+
                 setCarItems(data)
-                // console.log("my data ", data);
+                console.log("my data ", data);
             }
         } catch (error) {
             console.log("some error occur..!", error)
@@ -100,14 +92,26 @@ const CarsList = (props) => {
             const data = await FetchApi('display-carlist?car_categary=' + myQuery, "", {
                 method: "GET",
             })
-
+            console.log("my car",data)
             setCarItems(data)
-        } else {
-            const data = await FetchApi('display-carlist', "", {
-                method: "GET",
-            })
+        }
+
+        else {
+            const filterData = {};
+            if (selectedCityList && selectedCityList.length) {
+                filterData.city = selectedCityList;
+            }
+            if (selectedSeatsList && selectedSeatsList.length) {
+                filterData.seats = selectedSeatsList;
+            }
+
+            const data = await FetchApi('display-carlist', filterData, {
+                method: "POST",
+
+            });
+            console.log("data", filterData)
             setIsActive(true)
-            // console.log("car data here=>", data);
+            console.log("car data here=>", data);
 
             setCarItems(data)
         }
@@ -144,20 +148,32 @@ const CarsList = (props) => {
     }
     const [permissions, setPermissions] = useState([]);
 
-    const handleCityFilter = async () => {
-        const { value, checked } = this.target;
-        let { citys } = checkedCities;
-
-        // citys.map((item, index) => {
-        //     if(item.title ===value){
-        //         citys[index].is_checked=checked
-        //     }
-        // });
-        // console.log("My cities ====>", citys);
+    const handleCityFilter = async (e) => {
+        const { value, checked } = e.target;
+        let citys = cityFilter.slice();
+        console.log("My  citys== ===>", citys)
+        citys.map((item, index) => {
+            if (item.title === value) {
+                citys[index].is_checked = checked
+            }
+        });
+        selectedCityList = citys.filter((item, index) => item.is_checked && item.title).map((item, index) => item.title);
+        handlerCarCategary();
+        console.log("My ", selectedCityList)
     }
 
-    const handleSeatsFilter = async () => {
-
+    const handleSeatsFilter = async (e) => {
+        const { value, checked } = e.target;
+        let seats = carSeaterList.slice();
+        console.log("My  citys== ===>", value)
+        seats.map((item, index) => {
+            if (item.title === value) {
+                seats[index].is_checked = checked
+            }
+        });
+        selectedSeatsList = seats.filter((item, index) => item.is_checked && item.title).map((item, index) => item.title)
+        handlerCarCategary();
+        console.log("My ", selectedSeatsList)
     }
 
     const handleCheck = async (event) => {
@@ -195,6 +211,7 @@ const CarsList = (props) => {
         <>
             <div className="container background-image  d-flex ">
                 <div className='my-list ' >
+                
                     {
                         carItems && carItems.length > 0 ?
                             (
@@ -202,7 +219,7 @@ const CarsList = (props) => {
                                     {/* <h3 id='title-h3 black-text'>CATEGARY</h3> */}
                                     <div className='categary-name' id='btn-cat' >
                                         <button className="categary-type mx-2" value="all cars" onClick={(e) => { handlerCarCategary() }} >All Cars</button>
-                                        <button className='categary-type mx-2' value="BMW" onClick={(e) => { handlerCarCategary(e.target.value) }}>BMW </button>
+                                        <button className='categary-type mx-2' value="Renault" onClick={(e) => { handlerCarCategary(e.target.value) }}>Renault </button>
                                         <button className='categary-type mx-2' value="Honda" onClick={(e) => { handlerCarCategary(e.target.value) }}>Honda</button>
                                         <button className='categary-type mx-2' value="Maruti" onClick={(e) => { handlerCarCategary(e.target.value) }}>Maruti</button>
                                         <button className='categary-type mx-2' value="Hyundai" onClick={(e) => { handlerCarCategary(e.target.value) }}>Hyundai</button>
@@ -219,6 +236,7 @@ const CarsList = (props) => {
                                                             <div key={index}>
 
                                                                 <CustomCheckBox
+                                                                    value={item.title}
                                                                     onChange={handleSeatsFilter}
                                                                 >
                                                                     {item.title}
@@ -314,8 +332,10 @@ const CarsList = (props) => {
                                 </div>
                             ) :
                             (
-                                <div>
-                                    <ServerError />
+                                <div className='notFound'>
+
+                                    <img src="/image/dataNotFound.png" alt="" />
+
                                 </div>
                             )
                     }

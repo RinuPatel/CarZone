@@ -166,7 +166,13 @@
 
 }
 
-
+.notFound{
+    height: 100vh;
+    img{
+        display: inline;
+        margin-left: 25rem;
+    }
+}
 /* media Query */
 @media  (max-width:800px) {
     .my-list {

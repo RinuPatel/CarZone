@@ -1,7 +1,7 @@
 import Golf6 from "../../../../images/cars-big/golf6-box-removebg-preview.png";
-import AudiA1 from "../../../../images/cars-big/audia1.jpg";
+import AudiA1 from "../../../../images/cars-big/kwid.webp";
 import Toyota from "../../../../images/cars-big/toyotacamry.jpg";
-import Bmw320 from "../../../../images/cars-big/bmw320.jpg";
+import Bmw320 from "../../../../images/cars-big/alto.webp";
 import Benz from "../../../../images/cars-big/benz.jpg";
 import Passat from "../../../../images/cars-big/passatcc.jpg";
 
@@ -9,7 +9,7 @@ export const CAR_DATA = [
   [
     {
       name: "VW Golf 6",
-      price: "150",
+      price: "800",
       img: Golf6,
       model: "Golf 6",
       mark: "Volkswagen",
@@ -22,10 +22,10 @@ export const CAR_DATA = [
   ],
   [
     {
-      name: "Audi A1 S-Line",
-      price: "200",
+      name: "KWID",
+      price: "600",
       img: AudiA1,
-      model: "Audi",
+      model: "KWID",
       mark: "A1",
       year: "2012",
       doors: "4/5",
@@ -37,7 +37,7 @@ export const CAR_DATA = [
   [
     {
       name: "Toyota Camry",
-      price: "320",
+      price: "900",
       img: Toyota,
       model: "Camry",
       mark: "Toyota",
@@ -50,11 +50,11 @@ export const CAR_DATA = [
   ],
   [
     {
-      name: "BMW 320 ModernLine",
-      price: "200",
+      name: "Maruti Alto K10",
+      price: "700",
       img: Bmw320,
       model: "320",
-      mark: "BMW",
+      mark: "Maruti Alto K10",
       year: "2012",
       doors: "4/5",
       air: "Yes",
@@ -65,7 +65,7 @@ export const CAR_DATA = [
   [
     {
       name: "Mercedes-Benz GLK",
-      price: "300",
+      price: "500",
       img: Benz,
       model: "Benz GLK",
       mark: "Mercedes",
@@ -79,7 +79,7 @@ export const CAR_DATA = [
   [
     {
       name: "VW Passat CC",
-      price: "25",
+      price: "850",
       img: Passat,
       model: "Passat CC",
       mark: "Volkswagen",

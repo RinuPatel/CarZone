@@ -7,7 +7,7 @@ export default function Footer2(){
         <><div className="mainFooter">
             <div className="footer"> 
             <div className="container1">
-               <h2 style={{color:"red"}}>WheelsHub</h2> 
+               <h2 style={{color:"white"}}>WheelsHub</h2> 
                <p>We Provide Best Cars With The Best Prices. We Are Expert In Car Rental. Enjoy Your Holidays With Us. We Make Your Drive Memorable. We Care For Your Safety.</p>
             
                <i className='fa fa-facebook'></i><i className='fa fa-twitter'></i>

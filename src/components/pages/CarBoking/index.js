@@ -11,7 +11,7 @@ const CarBoking = () => {
         const data = await FetchApi("car-booking-status", "", {
             method: "GET"
         })
-
+        console.log("my bookinh data==>",data)
         if (data && data.status === 200) {
             const bookingDetails = data.bookingDetails || [];
             setCarStatus(bookingDetails)

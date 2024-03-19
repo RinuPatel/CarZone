@@ -39,7 +39,7 @@ function PickCar() {
                     btnID("btn1");
                   }}
                 >
-                 <p > Audi A1 S-Line</p>
+                 <p > KWID</p>
                 </button>
                 <button
                   className={`${coloringButton("btn2")}`}
@@ -73,7 +73,7 @@ function PickCar() {
                     btnID("btn4");
                   }}
                 >
-                  <p >   BMW 320 ModernLine</p>
+                  <p >   Maruti Alto K10</p>
                
                 </button>
                 <button

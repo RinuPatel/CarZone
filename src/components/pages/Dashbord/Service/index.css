@@ -40,7 +40,7 @@
        padding-right: 5px;
    }
    .main .service .container .row .col-md-2 .icon1{
-       width:  190px;
+       width:  130px;
        /* width: 50rem; */
        height: 30px;
        background-image: url('../../../../../public/icons/car.png');
@@ -49,8 +49,8 @@
        
    }
    
-   .main .service .container .row .col-md-2 .icon2{
-       width:  160px;
+   .main .service .container .row  .icon2{
+       width:  130px;
        height: 30px;
        background-image: url('../../../../../public/icons/like.png');
        background-size: cover;
