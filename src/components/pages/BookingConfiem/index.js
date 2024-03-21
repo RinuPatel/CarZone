@@ -47,6 +47,7 @@ const BookingConfiem = () => {
         const bookData = localStorage.getItem("booking")
         const parseData = JSON.parse(bookData)
         setMyBooking(parseData)
+
     }, [])
     return (
         <>
@@ -65,7 +66,7 @@ const BookingConfiem = () => {
                                     {/* <div className='contant' style={{ display: "inline-flex" }}> */}
                                     <p className='pragraph'> PICKUP/TIME</p>
                                     <label htmlFor="" className='mx-3'>{myBooking.from}</label>
-                                    <label htmlFor="" className='mx-3'>{myBooking.time}</label>
+                                    <label htmlFor="" className='mx-3'>{myBooking.pickupTime}</label>
                                     {/* {'\n'}
                                 <p className='pragraph'>DEPART</p>
                                 <label htmlFor="" className='mx-3'>Dindoli</label> */}
