@@ -27,7 +27,7 @@ export default function RentAndBuyCar() {
             <div className='BuyAndSellTabDesktop__buySellTab' style={{ left: "0px" }}>
               <div>
                 <div className="BuyCarTabDesktop__BuyCarTabDesktop">
-                  <h2 class="BuyCarTabDesktop_h2">WheelsHub benefits</h2>
+                  <h2 class="BuyCarTabDesktop_h2">WheelsHub Benefits</h2>
                   <ul className='BuyCarTabDesktop__benefits'>
                     <li>
                       <div>
@@ -95,7 +95,7 @@ export default function RentAndBuyCar() {
               <div className='BuyAndSellTabDesktop__buySellTab' style={{ left: "0px" }}>
                 <div>
                   <div className="BuyCarTabDesktop__BuyCarTabDesktop">
-                    <h2 class="BuyCarTabDesktop_h2">WheelsHub benefits</h2>
+                    <h2 class="BuyCarTabDesktop_h2">WheelsHub Benefits</h2>
                     <ul className='BuyCarTabDesktop__benefits'>
                       <li>
                         <div>
